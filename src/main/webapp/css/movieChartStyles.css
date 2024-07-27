@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+    background-color: #000;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+    background-color: #000;
+}
+
+.movie-overlay button{
+    cursor: pointer;
+    background-color: black;
+    color: white;
+}
+
+.movie-overlay button :hover {
+    background-color: red;
+}
+
+.movie-chart {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+/*창 크기와 관계없이 항상 한 줄 5개 원하면 아래코드로 변경 (마지막 줄이 5개 안되고 몇개 남으면 남은게 가운데 정렬되는 문제,,)*/
+.movie-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;  /* 가운데 정렬 */
+}
+
+.movie-item {
+    margin: 10px;  /* 작은 여백 설정 */
+    width: calc(20% - 20px);  /* 각 항목의 너비를 20%로 설정 */
+    flex: 1 1 calc(20% - 20px);  /* flex-grow, flex-shrink, flex-basis 설정 */
+    max-width: calc(20% - 20px);
+}
+
+/*.movie-list {*/
+/*    display: flex;*/
+/*    flex-wrap: wrap;*/
+/*    justify-content: flex-start; !* 왼쪽 정렬 *!*/
+/*    padding-left: 80px; !* 왼쪽 여백 추가 *!*/
+/*}*/
+
+/*.movie-item {*/
+/*    margin: 30px 10px;*/
+/*    width: calc(20% - 20px); !* 한 줄에 5개정도 배치 *!*/
+/*    box-sizing: border-box;*/
+/*}*/
+
+
+.movie-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+}
+
+.movie-info {
+    margin: 10px 0;
+    text-align: left;
+}
+
+.movie-info .movie-title {
+    font-size: 30px; /* 큰 글자 크기 설정 */
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.movie-info .rates {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px; /* 작은 글자 크기 설정 */
+    margin: 10px 0; /* 아래여백 */
+}
+
+/*.movie-info .rate-left {*/
+/*    text-align: left;*/
+/*}*/
+
+/*.movie-info .rate-right {*/
+/*    text-align: right;*/
+/*}*/
+
+/*.movie-info .release-date {*/
+/*    font-size: 14px; !* 글자 크기 설정 *!*/
+/*    margin-top: 50px; !* 위쪽 여백 추가 *!*/
+/*    text-align: left;*/
+/*}*/
+
+.movie-item {
+    position: relative;
+    width: 320px;
+}
+
+.movie-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.movie-item:hover .movie-overlay {
+    display: flex;
+}
+
+.movie-overlay button {
+    margin: 5px;
+    padding: 10px;
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.movie-overlay button:hover {
+    background-color: #ccc;
+}

@@ -1,0 +1,27 @@
+#global: Alertmanager의 전역 설정입니다.
+global:
+  #resolve_timeout: 경고가 해결된 것으로 간주되기 전 대기 시간입니다.
+  resolve_timeout: 5m
+#route: 경고를 처리하는 방법을 정의합니다.
+route:
+  #receiver: 기본 수신자입니다.
+  receiver: 'slack-notifications'
+  #group_by: 경고를 그룹화할 기준입니다.
+  group_by: ['alertname']
+  #group_wait: 경고를 그룹화하기 전 대기 시간입니다.
+  group_wait: 30s
+  #group_interval: 그룹화된 경고를 다시 전송하기 전 대기 시간입니다.
+  group_interval: 5m
+  #repeat_interval: 동일한 경고를 반복해서 전송하기 전 대기 시간입니다.
+  repeat_interval: 3h
+#receivers: 알림을 받을 수신자 목록입니다.
+receivers:
+  - name: 'slack-notifications'
+    #slack_configs: Slack 알림 설정입니다.
+    slack_configs:
+      #api_url: Slack에서 생성한 Webhook URL입니다.
+      - api_url: 'https://hooks.slack.com/services/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'
+        #channel: 메시지를 보낼 Slack 채널입니다.
+        channel: '#alerts'
+        #send_resolved: 경고가 해결되었을 때 알림을 보낼지 여부입니다.
+        send_resolved: true

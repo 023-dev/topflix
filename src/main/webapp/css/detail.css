@@ -1,0 +1,202 @@
+body {
+	margin: 0;
+	font-family: Arial, sans-serif;
+	background-color: #000;
+	color: #fff;
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #1c1c1c;
+	padding: 10px 20px;
+}
+
+header .logo {
+	font-size: 24px;
+	font-weight: bold;
+	color: #ff0000;
+}
+
+nav ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	gap: 20px;
+}
+
+nav ul li a {
+	text-decoration: none;
+	color: #fff;
+}
+
+.login-btn {
+	background-color: #ff0000;
+	color: #fff;
+	border: none;
+	padding: 5px 10px;
+	cursor: pointer;
+}
+
+main {
+	padding: 0px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.movie-banner {
+	position: relative;
+	width: 100%;
+	max-width: 100%;
+	overflow: hidden;
+}
+.movie-banner::after {
+	content: '';
+	height: auto;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 1) 100%);
+	pointer-events: none; /* 그라디언트가 이미지 클릭을 방해하지 않도록 설정 */
+}
+
+.movie-banner img {
+	width: 100%;
+	display: block;
+}
+.banner-content {
+	/*position: absolute;*/
+	/*bottom: 0;*/
+	/*left: 0;*/
+	/*color: #fff;*/
+	z-index: 10;
+	/*padding: 20px;*/
+	max-width: 70%;
+	/*font-size: 0.8rem;*/
+	/*text-shadow: 0 0 10px black;*/
+	position: absolute;
+	bottom: 220px; /* 원하는 위치로 조정하세요 */
+	left: 15%; /* 원하는 위치로 조정하세요 */
+	color: white;
+}
+
+.banner-content .title {
+	display: flex;
+}
+
+.banner-content h1 {
+	/*font-size: 2rem;*/
+	/*margin: 0 0 10px 0;*/
+	margin: 0;
+	font-size: 2.5em;
+}
+
+.banner-content .status {
+	display: flex;
+	/*gap: 10px;*/
+	/*margin-bottom: 10px;*/
+	/*font-size: 0.8rem;*/
+	font-size: 0.95em;
+	margin: 10px 0;
+}
+
+.banner-content .status span {
+	padding: 5px 10px;
+	/*border-radius: 5px;*/
+	/*background: none;*/
+	display: block;
+	margin-top: 5px;
+}
+
+.banner-content .buttons {
+	/*display: flex;*/
+	/*gap: 10px;*/
+	/*margin-bottom: 10px;*/
+	margin: 15px 20px 20px 20px;
+}
+
+.banner-content .btn {
+	padding: 5px 10px;
+	margin: 0 5px;
+	border: none;
+	cursor: pointer;
+	font-size: 0.8rem;
+	border-radius: 5px;
+}
+
+.banner-content .btn.red {
+	background-color: #ff0000;
+	color: #fff;
+}
+
+.banner-content .btn.black {
+	background-color: #000;
+	color: #fff;
+}
+
+.banner-content .description {
+	/*font-size: 0.8rem;*/
+	/*line-height: 1.5;*/
+	/*margin-bottom: 10px;*/
+	/*text-align: left;*/
+	max-width: 60%;
+	/*word-wrap: break-word;*/
+	font-size: 0.8em;
+	line-height: 1.5;
+	margin: 10px 0;
+}
+
+.banner-content .additional-info {
+	/*text-align: left;*/
+	/*font-size: 0.8rem;*/
+	/*line-height: 1.5;*/
+	/*margin-top: 10px;*/
+	/*display: flex;*/
+	/*flex-direction: column;*/
+	/*align-items: flex-end;*/
+	/*gap: 5px;*/
+
+	font-size: 0.85em;
+	line-height: 1.4;
+	margin: 10px 0;
+	position: absolute;
+	right: 20px; /* 오른쪽 위치 */
+	bottom: 20px; /* 아래 위치 */
+	max-width: 300px; /* 원하는 크기로 조정하세요 */
+}
+
+.banner-content .additional-info p {
+	margin-bottom: 0;
+	padding-right: 10px;
+}
+
+footer {
+	background-color: #111;
+	padding: 20px;
+	text-align: center;
+}
+
+.footer-content {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.footer-content ul {
+	list-style: none;
+	padding: 0;
+	margin: 0 0 20px 0;
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+}
+
+.footer-content ul li a {
+	color: #fff;
+	text-decoration: none;
+}

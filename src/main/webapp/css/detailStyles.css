@@ -1,0 +1,114 @@
+@charset "UTF-8";
+
+body {
+	margin: 0;
+	font-family: Arial, sans-serif;
+	color: white;
+	background-color: #000;
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px 50px;
+	background-color: #000;
+}
+
+.logo {
+	color: red;
+	font-size: 24px;
+  text-decoration: none;
+}
+
+nav a {
+	color: white;
+	text-decoration: none;
+	margin: 0 15px;
+}
+
+nav a:hover {
+	text-decoration: underline;
+}
+
+.hero {
+	position: relative;
+	height: 900px;
+	background-image: url('https://img.cgv.co.kr/Movie/Thumbnail/StillCut/000087/87864/87864226078_727.jpg');
+	/* replace with actual image URL */
+	background-size: cover;
+	background-position: center;
+}
+
+.hero-content {
+	position: absolute;
+	bottom: 50px;
+	left: 50px;
+}
+
+.hero-content h1 {
+	font-size: 48px;
+}
+
+.hero-content p {
+	font-size: 20px;
+}
+
+.hero-content button {
+	padding: 10px 20px;
+	margin: 10px 5px;
+	border: none;
+	cursor: pointer;
+}
+
+.hero-content .btn-red {
+	background-color: red;
+	color: white;
+}
+
+.hero-content .btn-grey {
+	background-color: grey;
+	color: white;
+}
+
+.reviews {
+	display: flex;
+	justify-content: center;
+	padding: 50px;
+	background-color: #000;
+}
+
+.reviews .review-section {
+	width: 50%;
+	margin: 0 20px;
+}
+
+.reviews h2 {
+	border-bottom: 2px solid grey;
+	padding-bottom: 10px;
+}
+
+.review {
+	margin: 20px 0;
+}
+
+.review .tag {
+	display: inline-block;
+	padding: 5px 10px;
+	background-color: red;
+	margin-right: 10px;
+}
+
+.review .username {
+	font-weight: bold;
+}
+
+.review p {
+	margin: 10px 0;
+}
+
+footer {
+	text-align: center;
+	padding: 20px;
+	background-color: #111;
+}

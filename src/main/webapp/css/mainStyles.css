@@ -1,0 +1,197 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	font-family: Arial, sans-serif;
+	color: white;
+	background-color: #000;
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px 50px;
+	background-color: #000;
+}
+
+.logo {
+	color: red;
+	font-size: 24px;
+	text-decoration: none;
+}
+
+nav a {
+	color: white;
+	text-decoration: none;
+	margin: 0 15px;
+}
+
+nav a:hover {
+	text-decoration: underline;
+}
+
+.hero {
+	position: relative;
+	height: 100vh;
+	overflow: hidden;
+}
+
+.hero iframe {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 100%;
+	height: 100%;
+	transform: translate(-50%, -50%);
+	z-index: -1;
+	pointer-events: none; /* iframe과의 상호작용을 방지 */
+}
+
+.hero-content {
+	position: absolute;
+	bottom: 20px;
+	left: 20px;
+	z-index: 1;
+	text-align: left;
+	color: #fff;
+	background: rgba(0, 0, 0, 0.5); /* 반투명한 배경 */
+	background-size: cover; padding : 20px; /* 배경 내부 여백 */
+	border-radius: 10px;
+	padding: 20px; /* 선택 사항: 배경 모서리를 둥글게 */
+}
+
+.hero-content h1 {
+	font-size: 36px;
+	margin-bottom: 10px;
+}
+
+.hero-content p {
+	margin-bottom: 20px;
+}
+
+.hero-content button {
+	margin: 5px;
+	padding: 10px 20px;
+	font-size: 16px;
+	background-color: rgba(0, 0, 0, 0.5);
+	color: #fff;
+	border: none;
+	cursor: pointer;
+}
+
+.hero-subtext {
+	margin-top: 20px;
+}
+
+.movie-tabs {
+	display: flex;
+	justify-content: center;
+	background-color: #333;
+	padding: 10px 0;
+}
+
+.movie-tabs button {
+	background: none;
+	border: none;
+	color: #fff;
+	font-size: 18px;
+	margin: 0 20px;
+	cursor: pointer;
+}
+
+.movie-tabs .active {
+	font-weight: bold;
+	border-bottom: 2px solid #fff;
+}
+
+.movie-chart {
+	padding: 40px 20px;
+	text-align: center;
+}
+
+.movie-list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+.movie-item {
+	margin: 20px;
+}
+
+.movie-item img {
+	width: 200px;
+	height: 300px;
+	object-fit: cover;
+	display: block;
+	margin: 0 auto;
+}
+
+.movie-info {
+	margin: 10px 57px;
+	text-align: left;
+}
+
+.movie-info .movie-title {
+	font-size: 25px; /* 큰 글자 크기 설정 */
+	font-weight: bold;
+	margin: 5px 0;
+}
+
+.movie-info .rates {
+	display: flex;
+	justify-content: space-between;
+	font-size: 15px; /* 작은 글자 크기 설정 */
+}
+
+.movie-info .rate-left {
+	text-align: left;
+}
+
+.movie-info .rate-right {
+	text-align: right;
+}
+
+
+
+.movie-item {
+	position: relative;
+	width: 320px;
+}
+
+.movie-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: none;
+	background: rgba(0, 0, 0, 0.5);
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.movie-item:hover .movie-overlay {
+	display: flex;
+}
+
+.movie-overlay button {
+	margin: 5px;
+	padding: 10px;
+	background-color: #fff;
+	border: none;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+
+.movie-overlay button:hover {
+	background-color: #ccc;
+}
+
+

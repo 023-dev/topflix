@@ -1,0 +1,143 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+.login-box {
+    text-align: center;
+    padding: 50px 0; /* 위아래 패딩 추가 */
+    width: 100%;
+    max-width: 400px; /* 최대 너비 설정 */
+}
+h1 {
+    color: #fff;
+    margin-bottom: 20px;
+    text-align: left; /* 왼쪽 정렬 추가 */
+}
+.textbox {
+    margin-bottom: 20px;
+    width: 100%; /* 너비 설정 */
+}
+.textbox input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box; /* 패딩 포함한 너비 계산 */
+}
+.btn {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #e50914;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    box-sizing: border-box; /* 패딩 포함한 너비 계산 */
+}
+.btn:hover {
+    background-color: #d40813;
+}
+.links {
+    margin-top: 20px;
+}
+.links a {
+    color: #ccc;
+    text-decoration: none;
+    margin: 0 5px;
+}
+.links a:hover {
+    color: #fff;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+.logo img {
+    width: 110px;
+    height: auto;
+}
+.menu {
+    display: flex;
+    align-items: center;
+}
+.menu div {
+    margin-left: 20px;
+    font-size: 15px;
+    color: white;
+    text-decoration: none;
+}
+.login-btn {
+    background-color: #e50914;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    margin-left: 20px;
+    border-radius: 2px;
+}
+.footer {
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    color: gray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+}
+.footer-content {
+    max-width: 500px;
+    width: 100%;
+    text-align: left;
+}
+.footer div {
+    margin: 2px 0;
+}
+.question {
+    padding: 10px 0;
+}
+.language-selector {
+    display: block;
+    margin: 10px -3px;
+    cursor: pointer;
+    width: 90px;
+    height: auto;
+}
+.links {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 20px;
+    padding: 15px 0;
+}
+.links a {
+    margin-right: 80px;
+    position: relative;
+    color: gray;
+    text-decoration: none;
+}
+.links a::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: gray;
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+}

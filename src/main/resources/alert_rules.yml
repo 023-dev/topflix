@@ -1,0 +1,19 @@
+#groups: 경고 규칙 그룹입니다.
+groups:
+  #name: 그룹 이름입니다.
+  - name: prometheus
+    #rules: 경고 규칙 목록입니다.
+    rules:
+      #alert: 경고 이름입니다.
+      - alert: HighRequestLatency
+        #expr: 경고 조건을 정의하는 PromQL 표현식입니다.
+        expr: job:request_latency_seconds:mean5m{job="CrawlerJob"} > 0.5
+        #for: 조건이 충족되어야 하는 지속 시간입니다.
+        for: 10m
+        #labels: 경고에 추가할 레이블입니다.
+        labels:
+          severity: 'page'
+        #annotations: 경고에 대한 추가 정보입니다.
+        annotations:
+          summary: "High request latency"
+          description: "Request latency is above 0.5s for more than 10 minutes."

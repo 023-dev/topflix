@@ -1,0 +1,232 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: white;
+}
+
+/*header {*/
+/*    display: flex;*/
+/*    justify-content: space-between;*/
+/*    align-items: center;*/
+/*    padding: 1rem;*/
+/*    !*background-color: #1c1c1c;*!*/
+/*    position: absolute;*/
+/*    z-index: 100;*/
+/*    width: 100%;*/
+/*}*/
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ff0000;
+}
+
+nav a {
+    margin-right: 1rem;
+    text-decoration: none;
+    color: white;
+}
+
+.login-button {
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+.main-banner {
+    position: relative;
+    text-align: left;
+    color: white;
+}
+
+.main-banner img {
+    width: 100%;
+    height: auto;
+}
+.trailer-container {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center; /* 비디오를 중앙에 배치 */
+    height: auto;!important;
+    overflow: hidden;
+}
+
+.trailer-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 비디오가 컨테이너에 맞도록 커버 */
+}
+.banner-text {
+    position: absolute;
+    top: 60%;
+    left: 10%;
+    transform: translate(0, -50%);
+    text-align: left;
+    max-width: 500px;
+    text-shadow: 0 0 10px black;
+}
+
+.movie-chart {
+    padding: 2rem;
+}
+
+.movie-chart-title {
+    margin-left: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.movie-carousel-container {
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    max-width: calc(100% - 80px); /* 화살표 버튼 너비를 제외한 영역 */
+    padding-left: 40px; /* 첫 번째 영화가 부분적으로 보이도록 패딩 추가 */
+    padding-right: 30px; /* 오른쪽 여백 추가 */
+}
+
+.movie-carousel {
+    display: flex;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    padding-left: 0; /* padding-left 제거 */
+}
+
+.movie {
+    text-align: center;
+    width: 200px;
+    margin-right: 20px;
+    flex: 0 0 auto;
+    position: relative;
+    scroll-snap-align: start;
+}
+
+.movie-img-container {
+    width: 100%;
+    height: 300px;
+    position: relative;
+    background-repeat: no-repeat;
+    margin: 0 10px;
+}
+
+.button-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5); /* 반투명 배경 */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.movie:hover .button-overlay {
+    opacity: 1;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    width: 120px; /* 버튼의 가로 길이 조절 */
+    gap: 10px; /* 버튼 위아래 간격 조절 */
+}
+
+button.custom-button {
+    width: 100%; /* 버튼의 가로 길이 조절 */
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 0.5rem 0; /* 버튼 높이 조절 */
+    cursor: pointer;
+    box-shadow: none; /* 기본 쉐도우 제거 */
+}
+
+button.custom-button:hover {
+    background-color: red;
+    color: white;
+}
+
+button.custom-button:focus,
+button.custom-button:active {
+    outline: none;
+    box-shadow: none; /* 클릭 시 파란색 테두리 제거 */
+}
+
+button.custom-button:active {
+    box-shadow: 0 0 10px black; /* 클릭 시 쉐도우를 블랙으로 설정 */
+}
+
+.movie-info {
+    padding: 0.5rem 0;
+    text-align: left; /* 영화 제목과 정보 왼쪽 정렬 */
+}
+
+.movie-info h3 {
+    font-size: 1.2rem !important;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    width: 180px; /* 너비는 필요에 따라 조정 */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.movie-info p {
+    font-size: 0.8rem;
+    margin: 0.5rem 0 0 0;
+    display: flex;
+    justify-content: flex-start; /* 영화 정보 왼쪽 정렬 */
+    gap: 3px; /* 영화 정보 사이 간격 조절 */
+}
+
+.movie-info .label {
+    margin-right: 5px;
+}
+
+.movie-info .value {
+    color: #ccc;
+    margin-right: auto;
+}
+.movie-chart-container {
+    width: 95%;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.carousel-control-prev,
+.carousel-control-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.carousel-control-prev {
+    left: 0px;
+    margin-bottom: 70px;
+
+}
+
+.carousel-control-next {
+    right: 0px;
+    margin-bottom: 70px;
+}

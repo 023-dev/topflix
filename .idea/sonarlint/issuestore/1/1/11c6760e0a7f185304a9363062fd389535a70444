@@ -1,0 +1,10 @@
+
+‘
+java:S1192"NDefine a constant instead of duplicating this literal "ì˜ˆì™¸ë°œìƒ:" 3 times.(†Æ°Æ8í†›ñ2J$ad99b20f-3f2a-4fde-b759-651b6ba5d832
+q
+java:S1874".Remove this use of "verify"; it is deprecated.(¯üıõ8í†›ñ2J$3a1f9beb-dd54-4461-96e6-1d571fd41770
+m	java:S106"+Replace this use of System.out by a logger.(†Æ°Æ8î†›ñ2J$144e7c08-e938-4757-bcb1-d8ae5fc37a60
+m	java:S1063"+Replace this use of System.out by a logger.(†Æ°Æ8î†›ñ2J$458841c0-4fb7-4f22-a546-27c905f90348
+m	java:S106E"+Replace this use of System.out by a logger.(†Æ°Æ8î†›ñ2J$e0db15c6-7a8f-4598-84cf-336011a55d2a
+m	java:S106W"+Replace this use of System.out by a logger.(†Æ°Æ8î†›ñ2J$8cd5aee2-fa72-4184-929a-7c555a696ebe
+m	java:S106r"+Replace this use of System.out by a logger.(†Æ°Æ8î†›ñ2J$4c0de00f-c325-41c8-a589-4c9dc3cc337d

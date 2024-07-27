@@ -1,0 +1,72 @@
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    padding: 40px 20px; /* 위아래 패딩 추가 */
+    background-color: #000;
+}
+
+
+.input-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    width: 100%; /* 너비 설정 */
+    max-width: 600px; /* 최대 너비 설정 */
+}
+
+.input-group input {
+    width: calc(100% - 140px); /* 버튼 크기에 따라 너비 조정 */
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #fff;
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+.input-group input.full-width {
+    width: calc(100% - 20px); /* 버튼이 없는 경우 전체 너비 사용 */
+    margin-right: 0;
+}
+
+.btn-duplicate {
+    background-color: #e50914;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn-duplicate:hover {
+    background-color: #d40813;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    background-color: #e50914;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 20px;
+    max-width: 600px; /* 최대 너비 설정 */
+}
+
+.btn-submit:hover {
+    background-color: #d40813;
+}
+
+.success {
+    background-color: green;
+}
+
+.error {
+    background-color: red;
+}

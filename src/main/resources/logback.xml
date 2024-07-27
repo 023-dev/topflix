@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+<!-- ConsoleAppender 설정: 로그를 콘솔에 출력 -->
+<appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+    <!-- 로그 메시지의 형식을 정의하는 encoder를 설정합니다. -->
+    <encoder>
+        <!-- 로그 메시지의 출력 형식을 패턴으로 지정합니다.
+                 %d{yyyy-MM-dd HH:mm:ss} : 로그 발생 시간을 지정된 형식으로 출력합니다.
+                 %-5level : 로그 레벨을 5자리로 맞춰서 출력합니다.
+                 %logger{36} : 로그를 발생시킨 로거의 이름을 최대 36글자까지 출력합니다.
+                 %msg : 로그 메시지를 출력합니다.
+                 %n : 새로운 줄 문자를 추가합니다. -->
+        <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+    </encoder>
+</appender>
+
+<!-- PrometheusAppender 설정: 로그 메트릭을 Prometheus로 전송 -->
+<!-- name="PROMETHEUS": Appender의 이름을 “PROMETHEUS”로 설정합니다.-->
+<appender name="PROMETHEUS" class="io.micrometer.logback.appender.MeterRegistryLogbackAppender">
+    <encoder>
+        <!-- pattern: 로그 메시지의 형식을 지정합니다. -->
+        <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+    </encoder>
+    <!-- meterRegistry: Prometheus 메트릭 레지스트리를 참조합니다. -->
+    <meterRegistry ref="prometheusMeterRegistry"/>
+</appender>
+
+<!-- 특정 패키지 (com.topflix) 설정: DEBUG 레벨 이상의 로그를 기록하고, 콘솔 및 Prometheus로 출력 -->
+<!-- com.topflix 패키지의 로그 메시지를 처리합니다.-->
+<!-- additivity="false": 상위 로거로 로그를 전파하지 않습니다.-->
+<logger name="com.topflix" level="DEBUG" additivity="false">
+    <!-- appender-ref: 콘솔과 Prometheus에 로그를 출력합니다. -->
+    <appender-ref ref="CONSOLE" />
+    <appender-ref ref="PROMETHEUS" />
+</logger>
+
+<!-- 루트 로거 설정: DEBUG 레벨 이상의 로그를 기록하고, 콘솔 및 Prometheus로 출력 -->
+<!-- 모든 로그 메시지를 처리합니다.-->
+<!-- level="DEBUG": DEBUG 레벨 이상의 로그를 기록합니다.-->
+<root level="DEBUG">
+    <!-- appender-ref: 콘솔과 Prometheus에 로그를 출력합니다. -->
+    <appender-ref ref="CONSOLE" />
+    <appender-ref ref="PROMETHEUS" />
+</root>
+
+<!-- Micrometer를 사용한 Prometheus 설정 -->
+<!-- Micrometer를 사용하여 Prometheus 메트릭 레지스트리를 초기화합니다.-->
+<!-- contextListener: Logback 설정 파일이 로드될 때 Micrometer 설정을 초기화합니다. -->
+<contextListener class="ch.qos.logback.classic.joran.listener.ConfigurationAction">
+    <micrometerMetrics>
+        <!-- bean: Prometheus 메트릭 레지스트리를 정의합니다. -->
+        <bean id="prometheusMeterRegistry" class="io.micrometer.prometheus.PrometheusMeterRegistry"/>
+    </micrometerMetrics>
+</contextListener>
+
+</configuration>

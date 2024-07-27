@@ -1,0 +1,15 @@
+
+”
+java:S2095/"QUse try-with-resources or close this "CloseableHttpClient" in a "finally" clause.(ıê”Ê8±Áò2J$7da3b7ba-ad01-48a5-adc1-3579be7dfcc8
+v
+java:S1161":Add the "@Override" annotation above this method signature(°€İáJ$56256d59-2fbc-4ba9-8ec4-04791695039a
+­
+java:S1989"lHandle the following exception that could be thrown by "setCharacterEncoding": UnsupportedEncodingException.(áò‰øÿÿÿÿJ$1b68c32e-ce96-4ec4-b3d2-7c9ea911154b
+•
+java:S1989"YHandle the following exception that could be thrown by "parseInt": NumberFormatException.(ÃÒÕ·J$6cd6f31d-31e6-462a-a4dc-e5e4d2524365
+•
+java:S1989"YHandle the following exception that could be thrown by "parseInt": NumberFormatException.(‰“ı¼J$86b5f74e-d96b-42dd-ab7a-5e61796c0856
+˜
+java:S1989*"WHandle the following exception that could be thrown by "initiateKakaoPay": IOException.(£ŒõøÿÿÿÿJ$f78e4b23-9dbf-49af-978c-b8ebc189289e
+”
+java:S1989+"SHandle the following exception that could be thrown by "sendRedirect": IOException.(Èå‚øÿÿÿÿJ$505d5c0d-8062-4913-b90b-b1230e2ee6e7

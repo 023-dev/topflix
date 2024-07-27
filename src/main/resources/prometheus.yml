@@ -1,0 +1,17 @@
+global:
+  scrape_interval: 15s  # 메트릭을 수집하는 주기
+
+alerting: #alerting.alertmanagers: Alertmanager의 주소를 설정합니다.
+  alertmanagers:
+    - static_configs:
+        #targets: Alertmanager가 실행 중인 호스트와 포트입니다.
+        - targets: ['localhost:9093']
+
+rule_files: #rule_files: 경고 규칙 파일입니다.
+  - "alert_rules.yml"
+#scrape_configs: Prometheus가 메트릭을 수집할 엔드포인트 설정입니다.
+scrape_configs:
+  - job_name: 'CrawlerJob'
+    static_configs:
+      # Prometheus HTTP 서버가 실행 중인 호스트 및 포트
+      - targets: ['localhost:9090']

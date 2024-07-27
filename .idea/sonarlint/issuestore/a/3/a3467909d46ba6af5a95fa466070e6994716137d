@@ -1,0 +1,13 @@
+
+‰
+java:S1192 "HDefine a constant instead of duplicating this literal "message" 3 times.(æÂöôşÿÿÿÿJ$77b306a7-d1f0-4e9f-a1c5-4c14052d3a58
+y
+java:S1854"8Remove this useless assignment to local variable "out2".(‹ÔèÔøÿÿÿÿJ$6ea3c229-0002-43a5-809c-5ac0f7b6a8e1
+„
+java:S1854"CRemove this useless assignment to local variable "confirmPassword".(Ë¶°êúÿÿÿÿJ$e7c62119-939b-441c-9cfa-82482bd83c4c
+u
+java:S1481"4Remove this unused "confirmPassword" local variable.(Ë¶°êúÿÿÿÿJ$0f0372cb-c0c5-406f-bf14-e07078a1d996
+j
+java:S1481")Remove this unused "out2" local variable.(‹ÔèÔøÿÿÿÿJ$205c7194-8114-42f2-8ca2-83a0d9f9f110
+|	java:S125,"<This block of commented-out lines of code should be removed.(êò“ÖşÿÿÿÿJ$b9ad947e-6760-41c9-bb91-cfa336035fba
+|	java:S1250"<This block of commented-out lines of code should be removed.(‰ï¨ñøÿÿÿÿJ$60518f4e-5be1-4d1e-95d9-1f925a69ec62

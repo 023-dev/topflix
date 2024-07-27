@@ -1,0 +1,117 @@
+.links{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    /*justify-content: space-between;*/
+    justify-content: center;
+    align-items: center;
+    /*height: 100vh;*/
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    width: 100%;
+    max-width: 400px; /* 최대 너비 제한 */
+    box-sizing: border-box;
+}
+
+
+h1 {
+    color: #fff;
+    margin-bottom: 20px;
+    text-align: left; /* 왼쪽 정렬 추가 */
+}
+.textbox {
+    margin-bottom: 20px;
+    width: 100%; /* 너비 설정 */
+}
+.textbox input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box; /* 패딩 포함한 너비 계산 */
+}
+.btn {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #e50914;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    box-sizing: border-box; /* 패딩 포함한 너비 계산 */
+}
+.btn:hover {
+    background-color: #d40813;
+}
+.links {
+    margin-top: 20px;
+}
+.links a {
+    color: #ccc;
+    text-decoration: none;
+    margin: 0 5px;
+}
+.links a:hover {
+    color: #fff;
+}
+
+
+
+
+
+
+/*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
+
+/*footer css 추가되면 아래 코드 다 빼기*/
+.footer {
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    color: gray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+}
+.footer-content {
+    max-width: 500px;
+    width: 100%;
+    text-align: left;
+}
+.footer div {
+    margin: 2px 0;
+}
+.question {
+    padding: 10px 0;
+}
+.language-selector {
+    display: block;
+    margin: 10px -3px;
+    cursor: pointer;
+    width: 90px;
+    height: auto;
+}

@@ -1,0 +1,8 @@
+
+‡	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(ÁÇË]8øÙ¬ÿ2J$ff9b3d40-7fb7-4a8e-ade5-43aaf9efd294
+}
+java:S1118":Add a private constructor to hide the implicit public one.(„³ò8ùÙ¬ÿ2J$6045bbf6-22a4-4840-b46a-b360ef3fb318
+~
+java:S6437"6Revoke and change this password, as it is compromised.(•”€²ùÿÿÿÿ8‚Ú¬ÿ2J$e46d3d18-1dd9-481c-a28b-4cb61188c2d3
+m	java:S106'"+Replace this use of System.out by a logger.(†Æ°Æ8Ïãëñ2J$b556e916-6a52-466d-b7e8-a20c10b43cbb
+m	java:S1063"+Replace this use of System.out by a logger.(†Æ°Æ8Ğãëñ2J$bf8cc1ad-b00c-4d7f-8ee6-bae35a137cdd
