@@ -16,15 +16,15 @@ public class SignInOKAction implements Action {
 
         String email = request.getParameter("email");
         String password = request.getParameter("password");
-        int result = userRepository.isMember(email,password);
+        int result = userRepository.isMember(email, password);
+        HttpSession session = request.getSession();
 
         if (result == 1) {
-            HttpSession session = request.getSession();
             session.setAttribute("userEmail", email);
+            return "main.do";
         } else {
-            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+            session.setAttribute("loginError", "이메일 또는 비밀번호가 잘못되었습니다.");
+            return "signIn.do";
         }
-        request.setAttribute("result", result);
-        return "main.do";
     }
 }
