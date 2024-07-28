@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-public class UpdateUserOKAction implements Action{
+public class UpdateUserOKAction implements Action {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         UserRepository userRepository = new UserRepository();
@@ -20,7 +20,8 @@ public class UpdateUserOKAction implements Action{
         String newPhone = request.getParameter("phone");
 
         User user = userRepository.getUserByEmail(email);
-        if(user != null) {
+        HttpSession session = request.getSession();
+        if (user != null) {
             // 기존 사용자 정보를 유지하면서 수정된 정보만 업데이트
             if (newPassword != null && !newPassword.trim().isEmpty()) {
                 user.setPassword(newPassword);
@@ -31,20 +32,18 @@ public class UpdateUserOKAction implements Action{
 
             int updateResult = userRepository.update(user);
 
-            HttpSession session = request.getSession();
-            session.getAttribute("userSession");
-
             // 결과에 따라 메시지 설정
             if (updateResult > 0) {
-                request.setAttribute("message", "회원수정이 완료되었습니다.");
+                session.setAttribute("message", "회원수정이 완료되었습니다.");
+                return "myPage.do"; // 성공 시 myPage로 리다이렉션
             } else {
-                request.setAttribute("message", "회원수정에 실패했습니다. 다시 시도해주세요.");
+                session.setAttribute("message", "회원수정에 실패했습니다. 다시 시도해주세요.");
+                return "updateUser.do"; // 실패 시 다시 수정 페이지로 리다이렉션
             }
         } else {
             // 사용자 정보를 찾을 수 없는 경우
-            request.setAttribute("message", "사용자를 찾을 수 없습니다.");
+            session.setAttribute("message", "사용자를 찾을 수 없습니다.");
+            return "updateUser.do"; // 사용자 정보가 없는 경우 수정 페이지로 리다이렉션
         }
-
-        return "/myPage.jsp";
     }
 }
