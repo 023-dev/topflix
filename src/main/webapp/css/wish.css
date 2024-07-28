@@ -1,0 +1,111 @@
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    text-align: center;
+}
+
+.content-wrapper {
+    width: 100%;
+    padding-top: 100px; /* 상단 여백을 패딩으로 설정 */
+    flex: 1; /* 컨텐츠 래퍼가 남은 공간을 차지하도록 설정 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.content-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container {
+    width: 60%;
+    text-align: left;
+}
+
+h1 {
+    text-align: left;
+    margin: 20px 0;
+    font-size: 2em;
+    font-weight: bold;
+    display: block;
+}
+
+.movie-list {
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    padding: 5px 0; /* 상단과 하단 흰색 라인 사이 여백 */
+    height: 364px; /* 영화 리스트의 높이를 350px로 설정, 약 5개의 리스트가 보이도록 설정 */
+    overflow-y: scroll; /* 스크롤바 추가 */
+    -ms-overflow-style: none; /* IE와 Edge에서 스크롤바 숨김 */
+    scrollbar-width: none; /* Firefox에서 스크롤바 숨김 */
+}
+
+/* Webkit 브라우저에서 스크롤바 숨김 */
+.movie-list::-webkit-scrollbar {
+    display: none;
+}
+
+.movie-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0; /* 영화 아이템의 패딩을 줄여 높이 조정 */
+}
+
+.separator {
+    border-bottom: 1px solid #555;
+}
+
+.movie-item img {
+    width: 50px;
+    height: auto;
+    margin-right: 20px;
+}
+
+.movie-item span {
+    flex: 1;
+    text-align: left;
+    margin-right: 10px;
+}
+
+.button-container {
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    padding: 10px 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.reserve-button {
+    background-color: #ff0000;
+    color: #fff;
+    border-radius: 5px; /* 라운드 추가 */
+}
+
+.cancel-button {
+    background-color: #555;
+    color: #fff;
+    border-radius: 5px; /* 라운드 추가 */
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0; /* 상하단 패딩 추가 */
+    background-color: #000;
+}

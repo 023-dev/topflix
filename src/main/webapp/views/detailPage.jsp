@@ -10,14 +10,7 @@
 </head>
 <body>
 <header>
-	<div class="logo">TOPFLIX</div>
-	<nav>
-		<ul>
-			<li><a href="#">HOME</a></li>
-			<li><a href="#">MY PAGE</a></li>
-			<li><a href="#">로그인</a></li>
-		</ul>
-	</nav>
+	<%@ include file="../includes/header.jsp" %>
 </header>
 <main>
 	<div class="movie-banner">
@@ -27,7 +20,7 @@
 				<h1>${movie.movieTitle}</h1>
 				<div class="buttons">
 					<button class="btn red" onclick="location.href='ticketPage.do?title=${movie.movieTitle}'">예매</button>
-					<button class="btn black" onclick="location.href='wishPage.do?title=${movie.movieTitle}'">저장</button>
+					<button class="btn black" onclick="location.href='wish.do?title=${movie.movieTitle}'">저장</button>
 				</div>
 			</div>
 			<div class="info">
@@ -49,15 +42,7 @@
 	</div>
 </main>
 <footer>
-	<div class="footer-content">
-		<ul>
-			<li><a href="#">회사소개</a></li>
-			<li><a href="#">이용약관</a></li>
-			<li><a href="#">개인정보처리방침</a></li>
-			<li><a href="#">고객센터</a></li>
-		</ul>
-		<p>© 2024 TOPFLIX. All rights reserved.</p>
-	</div>
+	<%@include file="../includes/footer.jsp"%>
 </footer>
 </body>
 </html>
