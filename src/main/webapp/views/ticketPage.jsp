@@ -39,14 +39,7 @@
 </head>
 <body>
 <header>
-    <div class="logo">TOPFLIX</div>
-    <nav>
-        <ul>
-            <li><a href="#">HOME</a></li>
-            <li><a href="#">MY PAGE</a></li>
-        </ul>
-        <button class="login-btn">로그인</button>
-    </nav>
+    <%@ include file="/includes/header.jsp" %>
 </header>
 <main>
     <section class="seat-selection">
@@ -108,15 +101,7 @@
     </section>
 </main>
 <footer>
-    <div class="footer-content">
-        <ul>
-            <li><a href="#">회사소개</a></li>
-            <li><a href="#">이용약관</a></li>
-            <li><a href="#">개인정보처리방침</a></li>
-            <li><a href="#">고객센터</a></li>
-        </ul>
-        <p>© 2024 TOPFLIX. All rights reserved.</p>
-    </div>
+    <%@ include file="/includes/footer.jsp" %>
 </footer>
 </body>
 </html>

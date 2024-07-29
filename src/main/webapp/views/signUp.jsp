@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>회원가입</title>
-    <link rel="stylesheet" type="text/css" href="../css/signUpStyles.css">
+    <link rel="stylesheet" type="text/css" href="../css/signUp.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         /* 비활성화 상태의 버튼 스타일 */
@@ -60,7 +60,8 @@
                     return true;
                 }
             }
-            function formatPhoneNumber(event){
+
+            function formatPhoneNumber(event) {
                 const input = event.target.value;
                 const cleaned = ('' + input).replace(/\D/g, '');
                 const match = cleaned.match(/^(\d{0,3})(\d{0,4})(\d{0,4})$/);
@@ -71,7 +72,7 @@
                         formatted = match[1];
                     }
                     if (match[2]) {
-                        formatted += '-'+ match[2];
+                        formatted += '-' + match[2];
                     }
                     if (match[3]) {
                         formatted += '-' + match[3];
@@ -81,6 +82,7 @@
                 event.target.value = formatted;
                 document.getElementById('formattedNumber').textContent = formatted;
             }
+
             function checkEmailDuplication() {
                 const email = emailField.value;
 
@@ -145,8 +147,10 @@
             <input type="date" name="birthdate" placeholder="생년월일" required class="full-width">
         </div>
         <button type="submit" id="btn-submit" class="btn-submit">가입하기</button>
-        <div id="password-feedback"></div>
-        <div id="email-feedback"></div>
+        <div class="feedback">
+            <div id="email-feedback">&nbsp</div>
+            <div id="password-feedback">&nbsp<br></div>
+        </div>
     </form>
 </div>
 <%@ include file="/includes/footer.jsp" %>
@@ -154,8 +158,8 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <!-- Custom Script -->
 <script>
-    $(document).ready(function(){
-        $('.togglePassword').on('click', function() {
+    $(document).ready(function () {
+        $('.togglePassword').on('click', function () {
             var input = $(this).prev('input');
             var icon = $(this);
             if (input.attr('type') === 'password') {

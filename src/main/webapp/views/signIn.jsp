@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Topflix 로그인</title>
-    <link rel="stylesheet" type="text/css" href="../css/signInStyles.css">
+    <link rel="stylesheet" type="text/css" href="../css/signIn.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
@@ -26,7 +26,8 @@
             <button type="submit" class="btn">로그인</button>
         </form>
         <div class="links">
-            <a href="#">비밀번호 찾기</a> | <a href="#">아이디 찾기</a> | <a href="signUp.jsp">회원가입</a>
+            <a href="#">비밀번호 찾기</a>
+            <a href="signUp.jsp">회원가입</a>
         </div>
     </div>
 </div>

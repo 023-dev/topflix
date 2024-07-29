@@ -28,20 +28,6 @@ body {
     display: flex;
     justify-content: space-between; /* 링크 사이에 공간 분배 */
     margin-bottom: 20px;
-
-}
-
-.links a {
-    color: #cccccc; /* 링크 색상도 약간 어둡게 조정 */
-    text-decoration: underline; /* 밑줄 추가 */
-    margin: 0 0; /* 여기에 0 0을 유지 */
-
-}
-
-.links a {
-    color: #cccccc; /* 링크 색상도 약간 어둡게 조정 */
-    text-decoration: underline; /* 밑줄 추가 */
-    margin: 0 0; /* 여기에 0 0을 유지 */
 }
 
 .language-selector {

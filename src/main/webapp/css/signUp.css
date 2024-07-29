@@ -93,3 +93,7 @@
 .togglePassword {
     position: absolute;
 }
+
+.feedback {
+    margin-top: 30px;
+}
