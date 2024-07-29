@@ -1,0 +1,10 @@
+
+|
+java:S1118
+":Add a private constructor to hide the implicit public one.(‹„n8¤»œç2J$96d8c68c-2bf4-4942-844a-9410d99f3b8f
+r	java:S106"+Replace this use of System.out by a logger.(ÿàÖ¿ùÿÿÿÿ8±»œç2J$61748681-4e6b-4c78-9e7d-f8300dbaed8c
+r	java:S106"+Replace this use of System.out by a logger.(œùßÊúÿÿÿÿ8²»œç2J$af8b48c7-177d-4cf2-bef8-77f355efe92a
+s
+java:S1128"0Remove this unused import 'java.nio.file.Files'.(‚ƒü8´»œç2J$de334275-9277-41b0-9769-1d21b99b18f2
+s
+java:S1128"0Remove this unused import 'java.nio.file.Paths'.(áè°¯8¸»œç2J$8773fd77-960d-4408-b0a0-f955dfa76e03

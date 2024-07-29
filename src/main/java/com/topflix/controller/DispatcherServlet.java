@@ -40,13 +40,11 @@ public class DispatcherServlet extends HttpServlet {
                     e.printStackTrace();
                 }
                 map.put(key, action);
-                System.out.println("Mapped " + key + " to " + clsName);
+//                System.out.println("Mapped " + key + " to " + clsName);
             }
         } catch (Exception e) {
             System.out.println("예외발생:" + e.getMessage());
         }
-        System.out.println(KakaoPayAction.class.getClassLoader());
-        System.out.println(Action.class.getClassLoader());
     }
 
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
