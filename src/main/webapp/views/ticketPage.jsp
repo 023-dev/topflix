@@ -1,4 +1,5 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="com.topflix.domain.Movie" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="ko">
@@ -8,24 +9,32 @@
     <title>좌석 선택 - 영화제목</title>
     <link rel="stylesheet" href="../css/ticket.css">
     <script>
-        function selectSeat(row, seat) {
-            const selectedSeats = document.getElementById("selectedSeats");
-            const seatString = row + seat;
-            const seatsHTML = document.getElementById("seats").innerHTML;
-            console.log(seatString)
-            if (selectedSeats.value.includes(seatString)) {
-                selectedSeats.value = selectedSeats.value.replace(seatString + ',', '');
-                document.getElementById(seatString).classList.remove('selected');
-                document.getElementById(seatString).classList.add('available');
-            } else {
-                selectedSeats.value += seatString + ',';
-                document.getElementById(seatString).classList.remove('available');
-                document.getElementById(seatString).classList.add('selected');
-                console.log(selectedSeats.value);
-                document.getElementById("seats").innerHTML += selectedSeats.value;
+            function selectSeat(row, seat) {
+                const selectedSeats = document.getElementById("selectedSeats");
+                const seatString = row + seat;
+                const selectedSeatsCount = selectedSeats.value.split(',').filter(s => s).length;
+                console.log(seatString)
+                if (selectedSeats.value.includes(seatString)) {
+                    selectedSeats.value = selectedSeats.value.replace(seatString + ',', '');
+                    document.getElementById(seatString).classList.remove('selected');
+                    document.getElementById(seatString).classList.add('available');
+                } else {
+                    if(selectedSeatsCount >= 8){
+                        alert("선택할 수 없습니다. 최대 8개의 좌석만 선택 가능합니다.");
+                        return;
+                    }
+                    selectedSeats.value += seatString + ',';
+                    document.getElementById(seatString).classList.remove('available');
+                    document.getElementById(seatString).classList.add('selected');
+                    // document.getElementById("seats").innerHTML += selectedSeats.value;
+                }
+                const seatsText = selectedSeats.value.substring(0, selectedSeats.value.length-1);
+                document.getElementById("seats").innerHTML = "좌석: " + seatsText;
+                console.log(seatsText);
+                document.getElementById("inputSeats").value = seatsText;
             }
-            document.getElementById("seats").innerHTML = "좌석: " + selectedSeats.value.substring(0, selectedSeats.value.length-1);
-        }
+
+
     </script>
 </head>
 <body>
@@ -83,9 +92,19 @@
             <p>${movie.movieRating}</p>
             <p>2024.07.13(토) 13:10</p>
             <p>상영관: 1관 5층</p>
+            <p>좌석가격: 12000원</p>
             <p id="seats">좌석: </p>
         </div>
-        <button type="submit" class="confirm-btn">결제하기</button>
+        <form id="ticketOK-form" action="ticketOK.do" method="post" accept-charset="UTF-8">
+            <input type="hidden" name="movieImage" value="${movie.movieImage}">
+            <input type="hidden" name="movieTitle" value="${movie.movieTitle}">
+            <input type="hidden" name="theaterName" value="홍대입구">
+            <input type="hidden" name="showtime" value="2024.07.13(토) 13:10">
+            <input type="hidden" name="screenName" value="1관">
+            <input type="hidden" name="seatPrice" value=12000>
+            <input type="hidden" id="inputSeats" name="inputSeats" value="">
+        </form>
+        <button type="submit" form="ticketOK-form" class="confirm-btn">결제하기</button>
     </section>
 </main>
 <footer>

@@ -8,6 +8,6 @@ import java.io.IOException;
 public class SignUpAction implements Action {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        return "/views/signUp.jsp";
+        return "signUp.jsp";
     }
 }

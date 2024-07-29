@@ -1,16 +1,11 @@
 
-„
-java:S4973*"<Strings and Boxed types should be compared using "equals()".(ïÔ•Éùÿÿÿÿ8ûúŠ2J$56ab08c3-eac8-4c9b-82fe-8d38a0bfcda2
 ¡
-java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(†•¤ÿÿÿÿÿÿ8ıúŠ2J$2ed7eacc-2339-41bd-bb98-7231fb8c65ab
+java:S2293'"YReplace the type specification in this constructor call with the diamond operator ("<>").(†•¤ÿÿÿÿÿÿ8À¶œç2J$451e8f7c-09ab-4a0d-8848-0049ae2db413
 }
-java:S1141D"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8şúŠ2J$4e8c1c5a-b7f1-44f3-9601-5bb164a37390
+java:S1141T"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8Ê¶œç2J$e92d826a-b99d-44e5-ad9b-1bc9fe21b034
 ˆ
-java:S1124"EReorder the modifiers to comply with the Java Language Specification.(å¥ó8ŸûŠ2J$0f0783a6-6d19-47c6-bbba-bb31bc40f627
+java:S1124%"EReorder the modifiers to comply with the Java Language Specification.(å¥ó8‰·œç2J$8a32d692-8874-49da-b46f-abc33df67bf8
 š
-java:S3776"RRefactor this method to reduce its Cognitive Complexity from 21 to the 15 allowed.(š¯€°ıÿÿÿÿ8¥ûŠ2J$d34003cb-cf16-4d58-be4c-151f8369471b
+java:S3776&"RRefactor this method to reduce its Cognitive Complexity from 22 to the 15 allowed.(š¯€°ıÿÿÿÿ8˜·œç2J$f1d83b6e-ef4f-4003-88fd-8e7aac8329a2
 n
-java:S1874E"+Remove this use of "URL"; it is deprecated.(ÌÀ‰†8…üŠ2J$4ea9d433-a89c-412f-bc2d-2bb1984bc617
-m	java:S106F"+Replace this use of System.out by a logger.(±Óÿ«8üŠ2J$409a4e65-ccfc-46b4-b295-e17077e5ab03
-´
-java:S1130m"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(ÙØ¤Şıÿÿÿÿ8¦üŠ2J$5d7b34a6-a11c-445a-bf60-e38021a3fa3b
+java:S1874U"+Remove this use of "URL"; it is deprecated.(ÌÀ‰†8«·œç2J$01c28488-f710-4110-bd12-bbdaea3016de

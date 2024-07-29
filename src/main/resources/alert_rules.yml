@@ -1,19 +1,56 @@
-#groups: 경고 규칙 그룹입니다.
-groups:
-  #name: 그룹 이름입니다.
-  - name: prometheus
-    #rules: 경고 규칙 목록입니다.
-    rules:
-      #alert: 경고 이름입니다.
-      - alert: HighRequestLatency
-        #expr: 경고 조건을 정의하는 PromQL 표현식입니다.
-        expr: job:request_latency_seconds:mean5m{job="CrawlerJob"} > 0.5
-        #for: 조건이 충족되어야 하는 지속 시간입니다.
-        for: 10m
-        #labels: 경고에 추가할 레이블입니다.
-        labels:
-          severity: 'page'
-        #annotations: 경고에 대한 추가 정보입니다.
-        annotations:
-          summary: "High request latency"
-          description: "Request latency is above 0.5s for more than 10 minutes."
+groups:  #groups: 경고 규칙 그룹입니다.
+  - name: prometheus  #name: 그룹 이름입니다.
+    rules:  #rules: 경고 규칙 목록입니다.
+    - alert: HighRequestLatency  #alert: 경고 이름입니다.
+      expr: job:request_latency_seconds:mean5m{job="CrawlerJob"} > 0.5  #expr: 경고 조건을 정의하는 PromQL 표현식입니다.
+      for: 10m  #for: 조건이 충족되어야 하는 지속 시간입니다.
+      labels:  #labels: 경고에 추가할 레이블입니다.
+        severity: 'page'
+      annotations:  #annotations: 경고에 대한 추가 정보입니다.
+        summary: "High request latency"
+        description: "Request latency is above 0.5s for more than 10 minutes."
+
+    - alert: CrawlerStart
+      expr: up{job="crawler"} == 1
+      for: 1m
+      labels:
+        severity: info
+      annotations:
+        summary: "Crawler started"
+        description: "The crawler has started."
+
+    - alert: CrawlerSuccess
+      expr: increase(successful_crawls_total[1m]) > 0
+      for: 1m
+      labels:
+        severity: info
+      annotations:
+        summary: "Crawler succeeded"
+        description: "The crawler has successfully fetched movie data."
+
+    - alert: CrawlerDown
+      expr: absent(crawler_status{job="CrawlerJob"} == 1)
+      for: 1m
+      labels:
+        severity: critical
+      annotations:
+        summary: "Crawler is down"
+        description: "The crawler has been down for more than 1 minute."
+
+    - alert: HighErrorRate
+      expr: increase(failed_crawls_total[1m]) > 5  # 1분간 실패한 크롤링 횟수가 5회를 초과할 때
+      for: 1m
+      labels:
+        severity: critical
+      annotations:
+        summary: "High error rate in crawling"
+        description: "Failed crawl rate is {{ $value }} failures per minute."
+
+    - alert: NoMoviesFetched
+      expr: increase(requests_total[5m]) > 0 and increase(successful_crawls_total[5m]) == 0  # 5분간 요청이 있었지만 성공적인 크롤링이 없을 때
+      for: 5m
+      labels:
+        severity: warning
+      annotations:
+        summary: "No movies fetched"
+        description: "Requests were made but no movies were fetched in the last 5 minutes."

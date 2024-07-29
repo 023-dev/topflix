@@ -32,7 +32,6 @@ public class DispatcherServlet extends HttpServlet {
 
             for (String key : prop.stringPropertyNames()) {
                 String clsName = prop.getProperty(key);
-                System.out.println("대답:"+key+":"+clsName);
                 Object obj = Class.forName(clsName).newInstance();
                 Action action = null;
                 try {
@@ -48,8 +47,6 @@ public class DispatcherServlet extends HttpServlet {
         }
         System.out.println(KakaoPayAction.class.getClassLoader());
         System.out.println(Action.class.getClassLoader());
-
-//        map.put("payment.do", "com.topflix.action.PaymentAction");
     }
 
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -64,11 +61,14 @@ public class DispatcherServlet extends HttpServlet {
 
         String viewPage = action.execute(request, response);
 
-        if (viewPage.endsWith(".do")) {
-            response.sendRedirect(viewPage);
-        } else {
-            RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
-            dispatcher.forward(request, response);
+        if (viewPage != null && viewPage.startsWith("http")) {
+            System.out.println(viewPage);
+            response.sendRedirect(viewPage); // 외부 URL 리다이렉트
+        } else if (viewPage != null && viewPage.endsWith(".do")) {
+            System.out.println(viewPage);
+            response.sendRedirect(viewPage); // 내부 URL 리다이렉트
+        } else if (viewPage != null) {
+            request.getRequestDispatcher(viewPage).forward(request, response);
         }
     }
 

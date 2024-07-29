@@ -10,6 +10,7 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 
+import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -17,33 +18,29 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebServlet("/kakaopay.do")
-public class KakaoPayAction extends HttpServlet {
+public class KakaoPayAction implements Action {
     private static final String KAKAOPAY_API_URL = "https://kapi.kakao.com/v1/payment/ready";
     private static final String KAKAOPAY_ADMIN_KEY = "9a6ae0ffeda654af12a486827c4dc6d9";
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
         request.setCharacterEncoding("UTF-8");
 
-        String movieTitle = request.getParameter("movieTitle");
-        int quantity = Integer.parseInt(request.getParameter("quantity"));
-        int totalAmount = Integer.parseInt(request.getParameter("price")) * quantity;
+        HttpSession session = request.getSession();
+
+        String movieTitle = (String) session.getAttribute("movieTitle");
+        int quantity = ((String)session.getAttribute("inputSeats")).split(",").length;
+        int seatPrice = Integer.parseInt((String)session.getAttribute("seatPrice"));
+        int totalAmount = seatPrice * quantity;
 
         Payment payment = new Payment();
         payment.setMovieTitle(movieTitle);
-//        payment.set(quantity); 몇개인지
         payment.setAmount(totalAmount);
 
-        HttpSession session = request.getSession();
-        session.setAttribute("movieTitle", movieTitle);
-        session.setAttribute("quantity", quantity);
-        session.setAttribute("totalAmount", totalAmount);
-
-        String redirectUrl = initiateKakaoPay(payment, quantity);
-        response.sendRedirect(redirectUrl);
+        String redirectUrl = initKakaoPay(payment, quantity);
+        return redirectUrl;
     }
 
-    private String initiateKakaoPay(Payment payment, Integer quantity) throws IOException {
+    private String initKakaoPay(Payment payment, Integer quantity) throws IOException {
         CloseableHttpClient httpClient = HttpClients.createDefault();
         HttpPost httpPost = new HttpPost(KAKAOPAY_API_URL);
         httpPost.addHeader("Authorization", "KakaoAK " + KAKAOPAY_ADMIN_KEY);
@@ -61,7 +58,7 @@ public class KakaoPayAction extends HttpServlet {
                 + "&fail_url=http://localhost:8080/kakaopayFail.do"
                 + "&cancel_url=http://localhost:8080/kakaopayCancel.do";
 
-        httpPost.setEntity(new StringEntity(requestBody));
+        httpPost.setEntity(new StringEntity(requestBody, "UTF-8"));
 
         try (CloseableHttpResponse httpResponse = httpClient.execute(httpPost)) {
             String responseString = EntityUtils.toString(httpResponse.getEntity());
