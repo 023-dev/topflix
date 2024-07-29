@@ -8,26 +8,38 @@ import com.topflix.repository.WishRepository;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class WishAction implements Action {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String userEmail = request.getParameter("email");
+        HttpSession session = request.getSession();
+        String userEmail = (String)session.getAttribute("userEmail");
+        System.out.println("userEmail  : " + userEmail);
         String movieTitle = request.getParameter("title");
-
+        System.out.println("title  : " + movieTitle);
         MovieRepository movieRepository = new MovieRepository();
-        Movie movie = movieRepository.findMovieByTitle(movieTitle);
+        WishRepository wishRepository = new WishRepository();
 
-        if (movie != null) {
-            WishRepository wishRepository = new WishRepository();
-            wishRepository.saveWish(new Wish(0, userEmail, movie.getMovieTitle()));
-
-            // 저장된 영화 목록을 가져옴
-            List<Wish> wishList = wishRepository.findAllByEmail(userEmail);
-            request.setAttribute("wishList", wishList);
+        if (movieTitle != null) {
+            wishRepository.saveWish(new Wish(0, userEmail, movieTitle));
         }
+
+        // 저장된 영화 목록을 가져옴
+        List<Wish> wishes = wishRepository.findAllByEmail(userEmail);
+        List<Movie> movies = new ArrayList<Movie>();
+        for (Wish wish : wishes) {
+            Movie movie = movieRepository.findMovieByTitle(wish.getMovieTitle());
+            movies.add(movie);
+            System.out.println(movie.toString());
+        }
+
+        request.setAttribute("wishes", wishes);
+        request.setAttribute("movies", movies);
+
 
         return "wish.jsp";
     }

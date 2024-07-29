@@ -12,26 +12,29 @@ import java.util.List;
 
 public class WishRepository {
 
-    public void deleteWish(int wishSeq) {
-        String query = "DELETE FROM WISH WHERE WISH_SEQ = ?";
+    public int deleteWish(String movieTitle) {
+        int result = -1;
+        String query = "DELETE FROM WISH WHERE MOVIE_TITLE = ?";
         try (Connection connection = ConnectionProvider.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(query)) {
-
-            preparedStatement.setInt(1, wishSeq);
-            preparedStatement.executeUpdate();
+            preparedStatement.setString(1, movieTitle);
+            result = preparedStatement.executeUpdate();
+            connection.commit();
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        return result;
     }
 
     public void saveWish(Wish wish) {
-        String query = "INSERT INTO WISH (USER_EMAIL, MOVIE_TITLE) VALUES (?, ?)";
+        String query = "INSERT IGNORE INTO WISH (USER_EMAIL, MOVIE_TITLE) VALUES (?, ?)";
         try (Connection connection = ConnectionProvider.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(query)) {
 
             preparedStatement.setString(1, wish.getUserEmail());
             preparedStatement.setString(2, wish.getMovieTitle());
             preparedStatement.executeUpdate();
+            connection.commit();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -39,7 +42,7 @@ public class WishRepository {
 
     public List<Wish> findAllByEmail(String email) {
         List<Wish> wishList = new ArrayList<>();
-        String query = "SELECT * FROM WISH WHERE USER_EMAIL = ?";
+        String query = "SELECT WISH_SEQ, USER_EMAIL, MOVIE_TITLE FROM WISH WHERE USER_EMAIL = ?";
 
         try (Connection connection = ConnectionProvider.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(query)) {
