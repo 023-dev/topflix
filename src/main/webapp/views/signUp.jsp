@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>회원가입</title>
     <link rel="stylesheet" type="text/css" href="../css/signUpStyles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         /* 비활성화 상태의 버튼 스타일 */
         .btn-submit:disabled {
@@ -87,6 +88,7 @@
             passwordField.addEventListener('input', validateForm);
             confirmPasswordField.addEventListener('input', validateForm);
             btnDuplicate.addEventListener('click', checkEmailAvailability); // 중복 확인 버튼 클릭 시 검사
+
         });
     </script>
 </head>
@@ -104,10 +106,12 @@
         </div>
         <div class="input-group">
             <input type="password" id="password" name="password" placeholder="비밀번호" required class="full-width">
+            <i class="fas fa-eye togglePassword"></i>
         </div>
         <div class="input-group">
             <input type="password" id="confirm_password" name="confirm_password" placeholder="비밀번호 확인" required
                    class="full-width">
+            <i class="fas fa-eye togglePassword"></i>
         </div>
         <div class="input-group">
             <input type="text" name="phone" placeholder="핸드폰 번호" required class="full-width">
@@ -121,5 +125,23 @@
     </form>
 </div>
 <%@ include file="/includes/footer.jsp" %>
+<!-- jQuery Library -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- Custom Script -->
+<script>
+    $(document).ready(function(){
+        $('.togglePassword').on('click', function() {
+            var input = $(this).prev('input');
+            var icon = $(this);
+            if (input.attr('type') === 'password') {
+                input.attr('type', 'text');
+                icon.attr('class', 'fas fa-eye-slash togglePassword');
+            } else {
+                input.attr('type', 'password');
+                icon.attr('class', 'fas fa-eye togglePassword');
+            }
+        });
+    });
+</script>
 </body>
 </html>
