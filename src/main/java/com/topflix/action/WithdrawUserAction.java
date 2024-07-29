@@ -21,10 +21,6 @@ public class WithdrawUserAction implements Action {
             return "signIn.do";
         }
 
-        if (password == null){
-            return "withdrawUser.do";
-        }
-
         int isMember = userRepository.isMember(email, password);
         System.out.println(isMember);
         if (isMember == 1) { // 비번일치 시
