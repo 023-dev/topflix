@@ -10,6 +10,7 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 
+import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -17,12 +18,11 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebServlet("/kakaopay.do")
-public class KakaoPayAction extends HttpServlet {
+public class KakaoPayAction implements Action {
     private static final String KAKAOPAY_API_URL = "https://kapi.kakao.com/v1/payment/ready";
     private static final String KAKAOPAY_ADMIN_KEY = "9a6ae0ffeda654af12a486827c4dc6d9";
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
         request.setCharacterEncoding("UTF-8");
 
         String movieTitle = request.getParameter("movieTitle");
@@ -40,7 +40,7 @@ public class KakaoPayAction extends HttpServlet {
         session.setAttribute("totalAmount", totalAmount);
 
         String redirectUrl = initiateKakaoPay(payment, quantity);
-        response.sendRedirect(redirectUrl);
+        return redirectUrl;
     }
 
     private String initiateKakaoPay(Payment payment, Integer quantity) throws IOException {
