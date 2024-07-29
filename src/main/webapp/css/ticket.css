@@ -3,75 +3,48 @@ body {
     font-family: Arial, sans-serif;
     background-color: #000;
     color: #fff;
-}
-
-header {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    background-color: #B30A0A;
-    padding: 10px 20px;
-}
-
-header .logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: #ff0000;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 20px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #fff;
-}
-
-.login-btn {
-    background-color: #ff0000;
-    color: #fff;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
+    height: 100vh;
 }
 
 main {
-    display: flow;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     padding: 20px;
-}
-.seat-selection{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+    max-width: 800px;  /* 전체 크기를 줄이기 위해 최대 너비 설정 */
     width: 100%;
-    max-width: 70%;
-    margin: 0 15%;
 }
+
+.seat-selection {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
 .seat-selection .ui {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .screen {
     background-color: #ff0000;
-    padding: 10px;
     color: #fff;
     font-weight: bold;
     text-align: center;
-    margin-bottom: 20px;
+    padding: 10px;
     width: 100%;
+    margin-bottom: 20px;
+    clip-path: polygon(0 0, 100% 0, 80% 100%, 20% 100%);
 }
 
 .seats {
     display: flex;
     flex-direction: column;
-    width: 100%;
 }
 
 .seat-row {
@@ -83,15 +56,20 @@ main {
 .row-label {
     margin-right: 10px;
     font-weight: bold;
+    color: #ff0000;
 }
 
 .seat {
     background-color: #444;
     border-radius: 5px;
-    padding: 10px;
     margin: 5px;
     cursor: pointer;
     user-select: none;
+    width: 30px;  /* 크기를 줄이기 위해 너비와 높이 축소 */
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .seat.selected {
@@ -109,50 +87,89 @@ main {
     padding: 10px 20px;
     cursor: pointer;
     margin-top: 20px;
+    width: 20%;
+    font-size: 18px;
 }
 
 .movie-info {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    width: 40%;
-    margin-left: 10%;
-    background-color: #1c1c1c;
     padding: 20px;
+    border: 1px solid #444;
     border-radius: 10px;
+    width: 100%;  /* 크기를 줄이기 위해 너비 100% 설정 */
 }
 
-.movie-info h2, .movie-info h4 {
-    margin: 0;
-    margin-bottom: 10px;
+.movie-info h2 {
+    margin: 0 0 10px;
+}
+
+.movie-info p {
+    margin: 5px 0;
 }
 
 .seat-status {
     display: flex;
-    justify-content: space-around;
-    width: 100%;
+    flex-direction: column;
     margin-top: 20px;
 }
 
 .seat-status span {
-    display: block;
-    background-color: #444;
-    padding: 5px 10px;
-    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
 }
 
-.seat-status .selected {
+.seat-box {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.selected-box {
     background-color: #ff0000;
+}
+
+.booked-box {
+    background-color: #808080;
+}
+
+.available-box {
+    background-color: #c0c0c0;
+    position: relative;
+}
+
+.cross {
+    color: #fff;
+    font-size: 18px;
+    position: absolute;
+}
+
+.genre-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.genre-tab {
+    background-color: #444;
+    padding: 5px 10px;
+    border-radius: 15px;
+    color: #fff;
+    font-size: 14px;
 }
 
 .booking-summary {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    max-width: 100%;
-    margin-left: 20px;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
     background: #242424;
+    width: 100%;  /* 크기를 줄이기 위해 너비 100% 설정 */
 }
 
 .movie-poster {
@@ -160,7 +177,7 @@ main {
 }
 
 .movie-poster img {
-    width: 150px;
+    width: 100px;  /* 크기를 줄이기 위해 너비 축소 */
     height: auto;
     border-radius: 10px;
 }
@@ -179,3 +196,7 @@ main {
     margin: 5px 0;
 }
 
+.seat-details {
+    display: flex;
+    flex-direction: column;
+}
