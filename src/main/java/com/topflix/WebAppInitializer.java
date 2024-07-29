@@ -18,7 +18,7 @@ public class WebAppInitializer implements ServletContextListener {
     public void contextInitialized(ServletContextEvent sce) {
         // 톰캣 시작 시 스케줄러 시작
         try {
-            scheduler.start();
+            //scheduler.start();
             PrometheusConfig.start();
             logger.info("Scheduler and Prometheus started successfully.");
         } catch (Exception e) {
