@@ -35,7 +35,7 @@
             <div>결제수단: KakaoPay</div>
         </div>
         <div class="buttons">
-            <button onclick="location.href='mainPage.do'">메인페이지</button>
+            <button onclick="location.href='main.do'">메인페이지</button>
             <button onclick="location.href='myPage.do'">예매페이지</button>
         </div>
     </div>

@@ -18,7 +18,7 @@
             <p>email@naver.com</p>
             <p>010-0000-0000</p>
             <a href="updateUser.do" class="btn">회원정보수정</a>
-            <a href="withdrawUser.do" class="btn">회원 탈퇴</a>
+            <a href="deleteUser.do" class="btn">회원 탈퇴</a>
         </div>
         <div class="action-item">
             <p class="count">2 건</p>

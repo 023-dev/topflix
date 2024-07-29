@@ -4,7 +4,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>회원탈퇴</title>
-    <link rel="stylesheet" type="text/css" href="../css/withdrawUser.css">
+    <link rel="stylesheet" type="text/css" href="../css/deleteUser.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
@@ -14,7 +14,7 @@
 <h1>회원탈퇴</h1>
 <p>정말 탈퇴하시겠습니까?</p>
 <p>비밀번호를 한번 더 입력해 주세요</p>
-<form action="withdrawUser.do" method="post">
+<form action="deleteUserOK.do" method="post">
     <div class = "input-wrapper">
     <input type="password" name="password" placeholder="비밀번호" required>
     <i class="fas fa-eye togglePassword"></i>

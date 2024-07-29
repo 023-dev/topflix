@@ -85,7 +85,7 @@
             <i class="fas fa-eye togglePassword"></i>
         </div>
         <div class="input-group">
-            <input type="text" name="phone" placeholder="핸드폰 번호" required class="full-width">
+            <input type="text" name="phone" placeholder="핸드폰 번호" required class="full-width" value="${user.phone}">
         </div>
         <div class="input-group">
             <label>생년월일</label>

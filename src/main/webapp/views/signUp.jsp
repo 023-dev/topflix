@@ -19,6 +19,7 @@
         document.addEventListener('DOMContentLoaded', function () {
             const emailField = document.getElementById('email');
             const passwordField = document.getElementById('password');
+            const phoneField = document.getElementById('phone');
             const confirmPasswordField = document.getElementById('confirm_password');
             const passwordFeedback = document.getElementById('password-feedback');
             const emailFeedback = document.getElementById('email-feedback');
@@ -59,6 +60,27 @@
                     return true;
                 }
             }
+            function formatPhoneNumber(event){
+                const input = event.target.value;
+                const cleaned = ('' + input).replace(/\D/g, '');
+                const match = cleaned.match(/^(\d{0,3})(\d{0,4})(\d{0,4})$/);
+                let formatted = '';
+
+                if (match) {
+                    if (match[1]) {
+                        formatted = match[1];
+                    }
+                    if (match[2]) {
+                        formatted += '-'+ match[2];
+                    }
+                    if (match[3]) {
+                        formatted += '-' + match[3];
+                    }
+                }
+
+                event.target.value = formatted;
+                document.getElementById('formattedNumber').textContent = formatted;
+            }
             function checkEmailDuplication() {
                 const email = emailField.value;
 
@@ -88,6 +110,7 @@
 
             emailField.addEventListener('input', validateForm);
             passwordField.addEventListener('input', validateForm);
+            phoneField.addEventListener('input', formatPhoneNumber);
             confirmPasswordField.addEventListener('input', validateForm);
             buttonDuplicate.addEventListener('click', checkEmailDuplication); // 중복 확인 버튼 클릭 시 검사
 
@@ -116,7 +139,7 @@
             <i class="fas fa-eye togglePassword"></i>
         </div>
         <div class="input-group">
-            <input type="text" name="phone" placeholder="핸드폰 번호" required class="full-width">
+            <input type="text" id="phone" name="phone" placeholder="핸드폰 번호" required class="full-width">
         </div>
         <div class="input-group">
             <input type="date" name="birthdate" placeholder="생년월일" required class="full-width">
