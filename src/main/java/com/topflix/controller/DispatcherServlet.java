@@ -64,11 +64,14 @@ public class DispatcherServlet extends HttpServlet {
 
         String viewPage = action.execute(request, response);
 
-        if (viewPage.endsWith(".do")) {
-            response.sendRedirect(viewPage);
-        } else {
-            RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
-            dispatcher.forward(request, response);
+        if (viewPage != null && viewPage.startsWith("http")) {
+            System.out.println(viewPage);
+            response.sendRedirect(viewPage); // 외부 URL 리다이렉트
+        } else if (viewPage != null && viewPage.endsWith(".do")) {
+            System.out.println(viewPage);
+            response.sendRedirect(viewPage); // 내부 URL 리다이렉트
+        } else if (viewPage != null) {
+            request.getRequestDispatcher(viewPage).forward(request, response);
         }
     }
 
