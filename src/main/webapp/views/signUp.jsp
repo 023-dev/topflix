@@ -21,9 +21,29 @@
             const passwordFeedback = document.getElementById('password-feedback');
             const emailFeedback = document.getElementById('email-feedback');
             const buttonSubmit = document.getElementById('btn-submit');
+            const btnDuplicate = document.querySelector('.btn-duplicate');
 
             const passwordPattern = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
             const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            function checkEmailAvailability() {
+                const email = emailField.value;
+                if (validateEmail()) {
+                    fetch('emailCheck.do?email=' + encodeURIComponent(email))
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.available) {
+                                alert('사용 가능한 이메일입니다.');
+                            } else {
+                                alert('이미 사용 중인 이메일입니다.');
+                            }
+                        })
+                        .catch(error => {
+                            alert('이메일 중복 확인 중 오류가 발생했습니다.');
+                        });
+                }
+            }
+
 
             function validateEmail() {
                 const email = emailField.value;
@@ -66,13 +86,14 @@
             emailField.addEventListener('input', validateForm);
             passwordField.addEventListener('input', validateForm);
             confirmPasswordField.addEventListener('input', validateForm);
+            btnDuplicate.addEventListener('click', checkEmailAvailability); // 중복 확인 버튼 클릭 시 검사
         });
     </script>
 </head>
 <body>
 <%@ include file="/includes/header.jsp" %>
 <div class="form-container">
-    <h1 style="color:white;">회원가입</h1>  <%--css 에 적용시 적용 안돼서 여기에 임시로 넣음--%>
+    <h1 style="color:white;">회원가입</h1> <%--css 에 적용시 적용 안돼서 여기에 임시로 넣음--%>
     <form action="signUpOK.do" method="post">
         <div class="input-group">
             <input type="text" name="name" placeholder="이름" required class="full-width">
