@@ -26,6 +26,13 @@
             </div>
         </div>
     </div>
+    <% if (session.getAttribute("loginError") != null) { %>
+    <script type="text/javascript">
+        alert("<%= session.getAttribute("loginError") %>");
+        <% session.removeAttribute("loginError"); %>  <!-- 메시지 중복 방지 -->
+    </script>
+    <% } %>
+
     <%@ include file="/includes/footer.jsp" %>
 </body>
 </html>

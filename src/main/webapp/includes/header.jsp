@@ -115,7 +115,7 @@
             </c:choose>
             <c:choose>
                 <c:when test="${empty sessionScope.userEmail}">
-                    <a href="singUp.do">회원가입</a>
+                    <a href="signUp.do">회원가입</a>
                 </c:when>
                 <c:otherwise>
                     <a href="myPage.do">마이페이지</a>

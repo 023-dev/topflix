@@ -81,3 +81,19 @@ T
 $src/main/webapp/views/ticketPage.jsp,7/3/738a1ebd4771fe5dd9656ca82c7ac76d4dd49624
 c
 3src/main/java/com/topflix/action/SignOutAction.java,3/a/3a1174abc17a8ae694e97863b591d8dbd036999d
+P
+ src/main/webapp/views/signUp.jsp,4/6/46026a8e1d22f6e9e3c11031f8c2a0675e2844ac
+T
+$src/main/webapp/css/signInStyles.css,6/b/6bd1a67f4b26879a06735657518d7540b12d0c3b
+h
+8src/main/java/com/topflix/config/AlertmanagerConfig.java,b/4/b47536f7e73925ef639e7248d9b08f405af5465b
+f
+6src/main/java/com/topflix/config/PrometheusConfig.java,7/1/714bef91e701368f1da785afc29b88f06461868b
+c
+3src/main/java/com/topflix/config/LogbackConfig.java,0/b/0bef6f0d5dba3566e84e69ffecfa437a21539d43
+i
+9src/main/java/com/topflix/scheduler/CrawlerScheduler.java,b/0/b08f88723339ce56a740e836170c5d1b1d62b8ea
+]
+-.idea/sonarlint/securityhotspotstore/index.pb,8/8/88a9255124c95bdc913197c120a8d560edc59c8e
+S
+#.idea/sonarlint/issuestore/index.pb,9/f/9fe84ebb15faf917b7def6236dba604453cc61e0

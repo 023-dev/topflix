@@ -89,14 +89,35 @@ public class UserRepository {
         return re;
     }
 
+    public int isEmailDuplicate(String email) {
+        int result = 0; //기본값 이메일 중복안됨
+        String sql = "select count(*) from user where user_email=?";
+        try (Connection conn = ConnectionProvider.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setString(1, email);
+            try (ResultSet resultSet = pstmt.executeQuery()) {
+                if (resultSet.next()) {
+                    int count = resultSet.getInt(1);
+                    if (count > 0) {
+                        result = 1; //이메일 중복됨
+                    }
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("예외 발생: " + e.getMessage());
+        }
+        return result;
+    }
+
+
     //email로 원하는 유저 정보 조회 (비밀번호 빼고 다)
-    public User getUserByEmail (String email){
+    public User getUserByEmail(String email) {
         String sql = "SELECT user_name, user_phone, user_birthday FROM user WHERE user_email = ?";
         User user = null;
         try (Connection conn = ConnectionProvider.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setString(1, email);
-            try(ResultSet resultSet = pstmt.executeQuery()){
+            try (ResultSet resultSet = pstmt.executeQuery()) {
                 if (resultSet.next()) {
 
                     String name = resultSet.getString("user_name");
@@ -115,4 +136,20 @@ public class UserRepository {
         }
         return user;
     }
+
+
+    public int withdraw(String email) {
+        int result = -1; //기본값 실패
+        String sql = "delete from user where user_email = ?";
+        try (Connection conn = ConnectionProvider.getConnection();
+             PreparedStatement preparedStatement = conn.prepareStatement(sql)) {
+            preparedStatement.setString(1, email);
+            result = preparedStatement.executeUpdate(); //삭제된 레코드 수
+        } catch (Exception e) {
+            System.out.println("예외 발생: " + e.getMessage());
+        }
+        return result;
+    }
+
+
 }

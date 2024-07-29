@@ -15,18 +15,22 @@ public class KakaoPaySuccessAction implements Action {
 
         HttpSession session = request.getSession();
         String pg_token = request.getParameter("pg_token");
+        String movieImage = request.getParameter("movieImage");
         String movieTitle = (String) session.getAttribute("movieTitle");
-        int amont = (int) session.getAttribute("totalAmount");
-
-        System.out.println(movieTitle);
-
+        String inputSeats = (String) session.getAttribute("inputSeats");
+        int quantity = inputSeats.split(",").length;
+        int seatPrice = Integer.parseInt((String)session.getAttribute("seatPrice"));
+        int totalAmount = seatPrice * quantity;
+        String theaterName = (String) session.getAttribute("theaterName");
+        String showtime = (String) session.getAttribute("showtime");
+        String screenName = (String) session.getAttribute("screenName");
 
         PaymentRepository paymentRepository  = new PaymentRepository();
         Payment payment = new Payment(pg_token,
                 "2024-07-17",
                 "kakaoPay",
-                amont,
-                "john.doe@example.com",
+                totalAmount,
+                "test@test.com",
                 movieTitle);
 
         int re = paymentRepository.insertPayment(payment);
@@ -34,13 +38,15 @@ public class KakaoPaySuccessAction implements Action {
             System.out.println("payment insert failed");
         }
 
+        request.setAttribute("movieImage",movieImage);
         request.setAttribute("pg_token", pg_token);
         request.setAttribute("movieTitle", movieTitle);
-
-//        HttpSession session = request.getSession();
-//        request.setAttribute("itemName", request.getParameter("itemName"));
-//        request.setAttribute("quantity", request.getParameter("quantity"));
-//        request.setAttribute("totalAmount", request.getParameter("totalAmount"));
+        request.setAttribute("theaterName", theaterName);
+        request.setAttribute("showtime", showtime);
+        request.setAttribute("screenName", screenName);
+        request.setAttribute("inputSeats", inputSeats);
+        request.setAttribute("totalAmount", totalAmount);
+        request.setAttribute("userEmail", session.getAttribute("userEmail"));
 
         return "/views/success.jsp";
     }

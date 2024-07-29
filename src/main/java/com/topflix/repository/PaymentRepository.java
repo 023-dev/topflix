@@ -10,7 +10,7 @@ public class PaymentRepository {
 
     public int insertPayment(Payment p) {
         int re = -1;
-        String sql = "INSERT INTO `PAYMENT` VALUES (?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO `PAYMENT` VALUES (?, ?, ?, ?, ?, ?,current_date,current_date)";
 
         try {
             Connection conn = ConnectionProvider.getConnection();
@@ -19,8 +19,7 @@ public class PaymentRepository {
             pstmt.setString(2, p.getDate());
             pstmt.setString(3, p.getPaymentType());
             pstmt.setInt(4, p.getAmount());
-            pstmt.setString(5, "john.doe@example.com");
-            System.out.println(p.getMovieTitle());
+            pstmt.setString(5, p.getUserEmail());
             pstmt.setString(6, p.getMovieTitle());
             re = pstmt.executeUpdate();
             ConnectionProvider.close(pstmt, conn);

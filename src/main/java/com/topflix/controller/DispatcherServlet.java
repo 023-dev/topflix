@@ -32,7 +32,6 @@ public class DispatcherServlet extends HttpServlet {
 
             for (String key : prop.stringPropertyNames()) {
                 String clsName = prop.getProperty(key);
-                System.out.println("대답:"+key+":"+clsName);
                 Object obj = Class.forName(clsName).newInstance();
                 Action action = null;
                 try {
@@ -48,8 +47,6 @@ public class DispatcherServlet extends HttpServlet {
         }
         System.out.println(KakaoPayAction.class.getClassLoader());
         System.out.println(Action.class.getClassLoader());
-
-//        map.put("payment.do", "com.topflix.action.PaymentAction");
     }
 
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

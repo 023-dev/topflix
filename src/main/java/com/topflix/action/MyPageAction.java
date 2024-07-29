@@ -5,9 +5,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class PaymentAction implements Action{
+public class MyPageAction implements Action{
+
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        return "/views/payment.jsp";
+        return "/views/myPage.jsp";
     }
 }
