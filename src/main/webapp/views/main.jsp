@@ -39,7 +39,7 @@
                             <div class="button-overlay">
                                 <div class="button-container">
                                     <button class="btn custom-button" onclick="location.href='detailPage.do?title=${movie.movieTitle}'" type="button">상세보기</button>
-                                    <button class="btn custom-button" onclick="location.href='ticket.do?title=${movie.movieTitle}'" type="button">예매하기</button>
+                                    <button class="btn custom-button" onclick="location.href='ticketPage.do?title=${movie.movieTitle}'" type="button">예매하기</button>
                                     <button class="btn custom-button" onclick="location.href='wishPage.do?title=${movie.movieTitle}'" type="button">저장하기</button>
                                 </div>
                             </div>

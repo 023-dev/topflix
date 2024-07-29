@@ -31,6 +31,6 @@ public class TicketAction implements Action{
         request.setAttribute("seats", seats);
         request.setAttribute("rowLabels", rowLabels);
         request.setAttribute("movie", movie);
-        return "ticket.jsp";
+        return "ticketPage.jsp";
     }
 }
