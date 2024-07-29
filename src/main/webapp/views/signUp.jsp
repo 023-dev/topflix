@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -22,29 +23,10 @@
             const passwordFeedback = document.getElementById('password-feedback');
             const emailFeedback = document.getElementById('email-feedback');
             const buttonSubmit = document.getElementById('btn-submit');
-            const btnDuplicate = document.querySelector('.btn-duplicate');
+            const buttonDuplicate = document.getElementById('checkButton');
 
             const passwordPattern = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
             const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-            function checkEmailAvailability() {
-                const email = emailField.value;
-                if (validateEmail()) {
-                    fetch('emailCheck.do?email=' + encodeURIComponent(email))
-                        .then(response => response.json())
-                        .then(data => {
-                            if (data.available) {
-                                alert('사용 가능한 이메일입니다.');
-                            } else {
-                                alert('이미 사용 중인 이메일입니다.');
-                            }
-                        })
-                        .catch(error => {
-                            alert('이메일 중복 확인 중 오류가 발생했습니다.');
-                        });
-                }
-            }
-
 
             function validateEmail() {
                 const email = emailField.value;
@@ -77,6 +59,26 @@
                     return true;
                 }
             }
+            function checkEmailDuplication() {
+                const email = emailField.value;
+
+                if (validateEmail()) {
+                    fetch('checkEmail.do?email=' + encodeURIComponent(email))
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.status === "success") {
+                                alert("사용가능한 이메일입니다.")
+                            } else {
+                                alert("중복된 이메일 입니다.")
+                                emailField.value = ''; // 이메일 입력 필드 비우기
+                            }
+                        })
+                        .catch(error => {
+                            alert("오류가 발생했습니다.")
+                        });
+                }
+            }
+
 
             function validateForm() {
                 const isEmailValid = validateEmail();
@@ -87,7 +89,7 @@
             emailField.addEventListener('input', validateForm);
             passwordField.addEventListener('input', validateForm);
             confirmPasswordField.addEventListener('input', validateForm);
-            btnDuplicate.addEventListener('click', checkEmailAvailability); // 중복 확인 버튼 클릭 시 검사
+            buttonDuplicate.addEventListener('click', checkEmailDuplication); // 중복 확인 버튼 클릭 시 검사
 
         });
     </script>
@@ -102,7 +104,7 @@
         </div>
         <div class="input-group">
             <input type="text" id="email" name="email" placeholder="이메일" required>
-            <button type="button" class="btn-duplicate">중복 확인</button>
+            <button type="button" id="checkButton" class="btn-duplicate">중복 확인</button>
         </div>
         <div class="input-group">
             <input type="password" id="password" name="password" placeholder="비밀번호" required class="full-width">
