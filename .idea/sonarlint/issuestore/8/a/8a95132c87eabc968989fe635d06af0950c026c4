@@ -1,22 +1,20 @@
 
 ›
-java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÎãôL8×ô¬ş2J$a7eeb5a5-1e16-4021-8b97-18115c233650
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÎãôL8úÉùĞ2J$2a66a384-a398-44d4-a79e-cf003ced39fd
 }
-java:S1141&"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8ëô¬ş2J$3e70dd05-20b0-41ba-9d43-a8e7c08c2496
-m	java:S106#"+Replace this use of System.out by a logger.(ı±§ú8ûô¬ş2J$d9aaa0fa-8a6c-473b-94da-c191c0935c4e
+java:S1141%"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8üÉùĞ2J$50643ad8-0b6d-42eb-921b-7da64d1d4751
 v
-java:S1874$"3Remove this use of "newInstance"; it is deprecated.(ÍØ´8üô¬ş2J$85d7b206-06f1-41ce-81df-1daa4a9c8b38
-m	java:S106,"+Replace this use of System.out by a logger.(íæÇ˜8õ¬ş2J$227b2a04-3221-4025-9382-72df311d5163
-m	java:S106/"+Replace this use of System.out by a logger.(†Æ°Æ8‚õ¬ş2J$af721084-0df3-4c6b-9963-ad5b1140ac32
-r	java:S1061"+Replace this use of System.out by a logger.(ªÚ¾Èşÿÿÿÿ8…õ¬ş2J$cbfdb3ff-5667-4415-a0c4-aeaa31e82d4a
-m	java:S1062"+Replace this use of System.out by a logger.(šñ‹¦8†õ¬ş2J$17ca43c7-f9c9-463e-8bfc-5351ca153079
-}	java:S1254"<This block of commented-out lines of code should be removed.(î›F8‡õ¬ş2J$1d8b9f09-11f4-47b9-b580-8c9ef325d381
-r	java:S106="+Replace this use of System.out by a logger.(ô£¡ğûÿÿÿÿ8‰õ¬ş2J$66f71e9e-e37e-4b4e-b162-373c15ada378
-‚
-java:S1161K":Add the "@Override" annotation above this method signature(Ïû©Öûÿÿÿÿ8Šõ¬ş2J$54f96619-f485-47e1-a02f-8f811f84837a
-©
-java:S1989L"aHandle the following exceptions that could be thrown by "execute": ServletException, IOException.(ú°÷¾ÿÿÿÿÿ8‹õ¬ş2J$229b52e0-808a-4faa-9852-1e329a6b2c91
-}
-java:S1161O":Add the "@Override" annotation above this method signature(‹¨¯¿8õ¬ş2J$d0316bcc-e995-4928-81bd-5fc622a3501f
-©
-java:S1989P"aHandle the following exceptions that could be thrown by "execute": ServletException, IOException.(ú°÷¾ÿÿÿÿÿ8õ¬ş2J$7206ab97-3607-48fe-99e8-7c01105c18be
+java:S1874#"3Remove this use of "newInstance"; it is deprecated.(ÍØ´8‹ÊùĞ2J$836525ff-68ea-4246-b6b5-493978650270
+m	java:S106+"+Replace this use of System.out by a logger.(íæÇ˜8ŒÊùĞ2J$e4ef420e-6051-4ec3-b622-20463d02cc61
+m	java:S106."+Replace this use of System.out by a logger.(†Æ°Æ8ŒÊùĞ2J$74f5d135-7cec-41f2-9141-6da7b14b383f
+r	java:S1060"+Replace this use of System.out by a logger.(ªÚ¾Èşÿÿÿÿ8ÊùĞ2J$287f0409-6b0c-4015-ab2f-11f8097d65bc
+m	java:S1061"+Replace this use of System.out by a logger.(šñ‹¦8ÊùĞ2J$7876ab8a-b9eb-4589-bd20-1f42d20529ce
+L	java:S106:"+Replace this use of System.out by a logger.(ô£¡ğûÿÿÿÿ8š‚şĞ2
+\
+java:S1161H":Add the "@Override" annotation above this method signature(Ïû©Öûÿÿÿÿ8‚şĞ2
+ƒ
+java:S1989I"aHandle the following exceptions that could be thrown by "execute": ServletException, IOException.(ú°÷¾ÿÿÿÿÿ8‚şĞ2
+W
+java:S1161L":Add the "@Override" annotation above this method signature(‹¨¯¿8‚şĞ2
+ƒ
+java:S1989M"aHandle the following exceptions that could be thrown by "execute": ServletException, IOException.(ú°÷¾ÿÿÿÿÿ8‚şĞ2

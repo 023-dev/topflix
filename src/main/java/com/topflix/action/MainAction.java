@@ -18,10 +18,6 @@ public class MainAction implements Action {
         // findAll 메서드를 통해 영화 목록 가져오기
         List<Movie> movies = movieRepository.findAll();
 
-        for (Movie m : movies){
-            System.out.println(m.getMovieTitle());
-        }
-
         // 영화 목록을 request 객체에 설정
         request.setAttribute("movies", movies);
 
