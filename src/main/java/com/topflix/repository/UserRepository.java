@@ -136,4 +136,20 @@ public class UserRepository {
         }
         return user;
     }
+
+
+    public int withdraw(String email) {
+        int result = -1; //기본값 실패
+        String sql = "delete from user where user_email = ?";
+        try (Connection conn = ConnectionProvider.getConnection();
+             PreparedStatement preparedStatement = conn.prepareStatement(sql)) {
+            preparedStatement.setString(1, email);
+            result = preparedStatement.executeUpdate(); //삭제된 레코드 수
+        } catch (Exception e) {
+            System.out.println("예외 발생: " + e.getMessage());
+        }
+        return result;
+    }
+
+
 }
