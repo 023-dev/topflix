@@ -86,9 +86,18 @@
             <p>${movie.movieRating}</p>
             <p>2024.07.13(토) 13:10</p>
             <p>상영관: 1관 5층</p>
+            <p>좌석가격: 12000원</p>
             <p id="seats">좌석: </p>
         </div>
-        <button type="submit" class="confirm-btn">결제하기</button>
+        <form id="payment-form" action="payment.do" method="post" enctype="application/x-www-form-urlencoded">
+            <input type="hidden" name="movieTitle" value=${movie.movieTitle}}>
+            <input type="hidden" name="theaterName" value="홍대입구">
+            <input type="hidden" name="showtime" value="2024.07.13(토) 13:10">
+            <input type="hidden" name="screenName" value="1관">
+            <input type="hidden" name="seatPrice" value="12000">
+            <input type="hidden" name="seats" value=${seats}>
+        </form>
+        <button type="submit" form="payment-form" class="confirm-btn">결제하기</button>
     </section>
 </main>
 <footer>
