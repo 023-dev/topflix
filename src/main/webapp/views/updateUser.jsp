@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>회원수정</title>
     <link rel="stylesheet" type="text/css" href="../css/updateUserStyles.css">
-<style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
     /* 비활성화 상태의 버튼 스타일 */
     .btn-submit:disabled {
         background-color: gray;
@@ -68,25 +69,27 @@
     <form action="updateUserOK.do" method="post">
         <div class="input-group">
             <label>이메일</label>
-            <span>${user.email}</span> <!-- 여기에 실제 데이터 출력 -->
+            <span>${user.email}</span>
             <input type="hidden" name="email" value="${user.email}">
         </div>
         <div class="input-group">
             <label>이름</label>
-            <span>${user.name}</span> <!-- 여기에 실제 데이터 출력 -->
+            <span>${user.name}</span>
         </div>
         <div class="input-group">
-            <input type="password" name="password" placeholder="비밀번호" required class="full-width">
+            <input type="password" id="password" name="password" placeholder="비밀번호" required class="full-width">
+            <i class="fas fa-eye togglePassword"></i>
         </div>
         <div class="input-group">
-            <input type="password" name="confirm_password" placeholder="비밀번호 확인" required class="full-width">
+            <input type="password" id="confirm_password" name="confirm_password" placeholder="비밀번호 확인" required class="full-width">
+            <i class="fas fa-eye togglePassword"></i>
         </div>
         <div class="input-group">
             <input type="text" name="phone" placeholder="핸드폰 번호" required class="full-width">
         </div>
         <div class="input-group">
             <label>생년월일</label>
-            <span>${user.birthday}</span> <!-- 여기에 실제 데이터 출력 -->
+            <span>${user.birthday}</span>
         </div>
         <button type="submit" id="btn-submit" class="btn-submit">수정하기</button>
         <button type="button" id="btn-cancel" class="btn-cancel" onclick="window.location.href='mainPage.jsp';">취소</button>
@@ -94,6 +97,24 @@
     </form>
 </div>
 <%@ include file="/includes/footer.jsp" %>
+<!-- jQuery Library -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- Custom Script -->
+<script>
+    $(document).ready(function(){
+        $('.togglePassword').on('click', function() {
+            var input = $(this).prev('input');
+            var icon = $(this);
+            if (input.attr('type') === 'password') {
+                input.attr('type', 'text');
+                icon.attr('class', 'fas fa-eye-slash togglePassword');
+            } else {
+                input.attr('type', 'password');
+                icon.attr('class', 'fas fa-eye togglePassword');
+            }
+        });
+    });
+</script>
 </body>
 </html>
 

@@ -49,6 +49,9 @@ body {
     margin-bottom: 15px;
     width: 100%;
     max-width: 500px; /* 입력 그룹의 최대 너비 설정 */
+
+    position: relative;
+
 }
 
 .input-group label {
@@ -58,7 +61,7 @@ body {
 }
 
 .input-group input {
-    width: 100%;
+    /*width: 100%;*/
     padding: 10px;
     border: none;
     border-radius: 5px;
@@ -118,4 +121,26 @@ button {
 .btn-submit:disabled {
     background-color: gray;
     cursor: not-allowed;
+}
+
+
+
+.input-group .togglePassword {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    /*z-index: 2; !* 아이콘을 최상단으로 *!*/
+    font-size: 20px; /* 아이콘 크기 */
+    color: #333; /* 아이콘 색상 */
+}
+.input-group input {
+    width: calc(100% - 40px); /* 아이콘이 들어갈 공간을 확보 */
+    padding-right: 40px; /* 오른쪽에 아이콘이 들어갈 공간 확보 */
+}
+
+
+.togglePassword {
+    position: absolute;
 }
