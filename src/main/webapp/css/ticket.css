@@ -3,9 +3,9 @@ body {
     font-family: Arial, sans-serif;
     background-color: #000;
     color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    /*display: flex;*/
+    /*justify-content: center;*/
+    /*align-items: center;*/
     height: 100vh;
 }
 
@@ -16,13 +16,15 @@ main {
     padding: 20px;
     max-width: 100%;  /* 전체 크기를 줄이기 위해 최대 너비 설정 */
     width: 100%;
+    margin: 5% 0 5%;
 }
 
 .seat-selection {
     display: flex;
     width: 100%;
-    justify-content: space-between;
+    justify-content: space-evenly;
     margin-bottom: 20px;
+
 }
 
 .seat-selection .ui {
@@ -84,11 +86,12 @@ main {
     background-color: #ff0000;
     color: #fff;
     border: none;
-    padding: 10px 20px;
+    padding: 5% 0 5% 0;
     cursor: pointer;
-    margin-top: 20px;
-    width: 20%;
-    font-size: 18px;
+    margin: 20px 0 20px 0;
+    border-radius: 10px;
+    width: 10%;
+    font-size: 20px;
 }
 
 .movie-info {
@@ -97,7 +100,7 @@ main {
     padding: 20px;
     border: 1px solid #444;
     border-radius: 10px;
-    width: 100%;  /* 크기를 줄이기 위해 너비 100% 설정 */
+    width: 30%;  /* 크기를 줄이기 위해 너비 100% 설정 */
 }
 
 .movie-info h2 {
@@ -120,6 +123,14 @@ main {
     margin-bottom: 5px;
 }
 
+.seat-box {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .seat-box {
     width: 20px;
     height: 20px;
@@ -165,26 +176,32 @@ main {
 
 .booking-summary {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 20px;
+    justify-content: center;
     background: #242424;
-    width: 100%;  /* 크기를 줄이기 위해 너비 100% 설정 */
+    width: 100%;
+    max-width: 100%;
 }
 
 .movie-poster {
-    margin-right: 20px;
+    margin-right: 10%;
+    width: 10%;
+    max-width: 100%;
+    padding: 1%;
 }
 
 .movie-poster img {
-    width: 100px;  /* 크기를 줄이기 위해 너비 축소 */
+    margin-right: 10%;
+    width: 100%;  /* 크기를 줄이기 위해 너비 축소 */
     height: auto;
     border-radius: 10px;
 }
 
 .summary-info {
+    margin-right: 10%;
+
     display: flex;
     flex-direction: column;
+    padding: 1%;
 }
 
 .summary-info h3 {

@@ -1,20 +1,26 @@
 
 ›
-java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÎãôL8úÉùĞ2J$2a66a384-a398-44d4-a79e-cf003ced39fd
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÎãôL8úÉùĞ2J$fcc6164f-7f1b-4fcd-beae-f922c5a052de
 }
-java:S1141%"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8üÉùĞ2J$50643ad8-0b6d-42eb-921b-7da64d1d4751
+java:S1141%"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8üÉùĞ2J$8d59813b-81ec-4d21-8ef2-752ffa1cd684
 v
-java:S1874#"3Remove this use of "newInstance"; it is deprecated.(ÍØ´8‹ÊùĞ2J$836525ff-68ea-4246-b6b5-493978650270
-m	java:S106+"+Replace this use of System.out by a logger.(íæÇ˜8ŒÊùĞ2J$e4ef420e-6051-4ec3-b622-20463d02cc61
-m	java:S106."+Replace this use of System.out by a logger.(†Æ°Æ8ŒÊùĞ2J$74f5d135-7cec-41f2-9141-6da7b14b383f
-r	java:S1060"+Replace this use of System.out by a logger.(ªÚ¾Èşÿÿÿÿ8ÊùĞ2J$287f0409-6b0c-4015-ab2f-11f8097d65bc
-m	java:S1061"+Replace this use of System.out by a logger.(šñ‹¦8ÊùĞ2J$7876ab8a-b9eb-4589-bd20-1f42d20529ce
-L	java:S106:"+Replace this use of System.out by a logger.(ô£¡ğûÿÿÿÿ8š‚şĞ2
-\
-java:S1161H":Add the "@Override" annotation above this method signature(Ïû©Öûÿÿÿÿ8‚şĞ2
-ƒ
-java:S1989I"aHandle the following exceptions that could be thrown by "execute": ServletException, IOException.(ú°÷¾ÿÿÿÿÿ8‚şĞ2
-W
-java:S1161L":Add the "@Override" annotation above this method signature(‹¨¯¿8‚şĞ2
-ƒ
-java:S1989M"aHandle the following exceptions that could be thrown by "execute": ServletException, IOException.(ú°÷¾ÿÿÿÿÿ8‚şĞ2
+java:S1874#"3Remove this use of "newInstance"; it is deprecated.(ÍØ´8‹ÊùĞ2J$7b1ecce6-b893-4874-bdc2-933bd81f9b38
+}	java:S125+"<This block of commented-out lines of code should be removed.(’ĞàQ8àµ™÷2J$4e6b5c82-539a-4d14-aebf-8cbc5feba269
+m	java:S106."+Replace this use of System.out by a logger.(†Æ°Æ8ŒÊùĞ2J$ff806bd9-a648-4352-b58e-3428920c1275
+r	java:S1068"+Replace this use of System.out by a logger.(ô£¡ğûÿÿÿÿ8š‚şĞ2J$34244284-c7af-4fdd-919a-82e4dc01f3df
+
+java:S1871A"LThis branch's code block is the same as the block for the branch on line 62.(¦ĞòÇ8ÿò–÷2J$9fd5c15a-11fe-44f4-a88b-ef0e77f0a8ed
+m	java:S106?"+Replace this use of System.out by a logger.(ÆÙØ“8€ó–÷2J$128e3b61-faa0-445f-916b-464d6018bdcc
+m	java:S106B"+Replace this use of System.out by a logger.(ÆÙØ“8€ó–÷2J$1d7f7112-f4c5-4170-ba5e-4e63c5ae43e4
+‚
+java:S1161I":Add the "@Override" annotation above this method signature(Ïû©Öûÿÿÿÿ8‚şĞ2J$32ef4a2c-fcb7-442e-b0af-6597803904b7
+©
+java:S1989J"aHandle the following exceptions that could be thrown by "execute": ServletException, IOException.(ú°÷¾ÿÿÿÿÿ8‚şĞ2J$6d78ad38-6514-4236-9d7c-c5ffec94438b
+}
+java:S1161M":Add the "@Override" annotation above this method signature(‹¨¯¿8‚şĞ2J$4f899459-15d4-46a0-b19e-e36876dc08fe
+©
+java:S1989N"aHandle the following exceptions that could be thrown by "execute": ServletException, IOException.(ú°÷¾ÿÿÿÿÿ8‚şĞ2J$203bafd1-3242-4261-b473-ac12bad8be3e
+
+java:S1128	"<Remove this unused import 'javax.servlet.RequestDispatcher'.(Ëöò¼8„ó–÷2J$214d3d21-f3f9-4584-a74f-3db4ce408207
+
+java:S1128">Remove this unused import 'com.topflix.action.KakaoPayAction'.(İ ÑÏ8—¦˜÷2J$2680b5c2-0a22-4c7c-bc20-8b49dcb4c56a

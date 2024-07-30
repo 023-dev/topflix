@@ -8,13 +8,14 @@ body {
 
 .footer {
     background-color: black;
-    color: #cccccc; /* 폰트 색상을 약간 어둡게 조정 */
+    color: #cccccc!important;/* 폰트 색상을 약간 어둡게 조정 */
     padding: 20px 0;
     font-size: 14px; /* 폰트 크기 조정 */
 }
 
 .footer-content {
     max-width: 800px;
+    color: #cccccc; /* 폰트 색상을 약간 어둡게 조정 */
     margin: 0 auto;
     text-align: left; /* 왼쪽 정렬 */
 }
