@@ -21,24 +21,24 @@
             <p>${phone}</p>
             <div class="action-item-01">
                 <a href="updateUser.do" class="btn red">회원정보수정</a>
-                <a href="withdrawUser.do" class="btn grey">회원 탈퇴</a>
+                <a href="deleteUser.do" class="btn grey">회원탈퇴</a>
             </div>
         </div>
         <div class="divider"></div>
         <div class="action-item">
-            <p class="count">1 건</p>
-            <a href="#" class="btn">예약 내역</a>
+            <p class="count">${reservationSize} 건</p>
+            <a href="reservation.do" class="btn">예매내역</a>
         </div>
         <div class="divider"></div>
         <div class="action-item">
-            <p class="count">0 건</p>
-            <a href="#" class="btn">저장하기</a>
+            <p class="count">${wishSize} 건</p>
+            <a href="wish.do" class="btn">관심영화</a>
         </div>
-        <div class="divider"></div>
-        <div class="action-item">
-            <p class="count">0 건</p>
-            <a href="#" class="btn">리뷰</a>
-        </div>
+<%--        <div class="divider"></div>--%>
+<%--        <div class="action-item">--%>
+<%--            <p class="count">0 건</p>--%>
+<%--            <a href="#" class="btn">리뷰</a>--%>
+<%--        </div>--%>
     </div>
 </div>
 <footer>

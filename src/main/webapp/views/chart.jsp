@@ -16,7 +16,6 @@
     <div class="movie-chart-container">
         <section class="movie-chart">
             <h2 id="movieChartBtn" class="tablink active-title" onclick="openTab('movie-chart')">무비차트</h2>
-            <h2 id="upcomingMoviesBtn" class="tablink" onclick="openTab('upcoming-movies')">상영예정작</h2>
         </section>
         <section id="movie-chart" class="tabcontent" style="display: block;">
             <div class="movie-list">

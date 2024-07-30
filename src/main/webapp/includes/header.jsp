@@ -101,23 +101,23 @@
 <div class="header-container">
     <div class="header" id="header">
         <div class="logo">
-            <a href="main.do"><img src="../images/logo.png" alt="Topflix Logo"></a>
+            <a href="/views/main.do"><img src="../images/logo.png" alt="Topflix Logo"></a>
         </div>
         <div class="menu">
             <c:choose>
                 <c:when test="${empty sessionScope.userEmail}">
-                    <a href="signIn.do">로그인</a>
+                    <a href="/views/signIn.do">로그인</a>
                 </c:when>
                 <c:otherwise>
-                    <a href="signOut.do">로그아웃</a>
+                    <a href="/views/signOut.do">로그아웃</a>
                 </c:otherwise>
             </c:choose>
             <c:choose>
                 <c:when test="${empty sessionScope.userEmail}">
-                    <a href="signUp.do">회원가입</a>
+                    <a href="/views/signUp.do">회원가입</a>
                 </c:when>
                 <c:otherwise>
-                    <a href="myPage.do">마이페이지</a>
+                    <a href="/views/myPage.do">마이페이지</a>
                 </c:otherwise>
             </c:choose>
         </div>

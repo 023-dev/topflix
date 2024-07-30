@@ -1,8 +1,12 @@
 package com.topflix.action;
 
 import com.topflix.domain.Payment;
+import com.topflix.domain.Reservation;
 import com.topflix.repository.PaymentRepository;
+import com.topflix.repository.ReservationRepository;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -24,13 +28,15 @@ public class KakaoPaySuccessAction implements Action {
         String theaterName = (String) session.getAttribute("theaterName");
         String showtime = (String) session.getAttribute("showtime");
         String screenName = (String) session.getAttribute("screenName");
-
+        LocalDate today = LocalDate.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        String formattedDate = today.format(formatter);
         PaymentRepository paymentRepository  = new PaymentRepository();
         Payment payment = new Payment(pg_token,
-                "2024-07-17",
+                formattedDate,
                 "kakaoPay",
                 totalAmount,
-                "test@test.com",
+                (String)session.getAttribute("userEmail"),
                 movieTitle);
 
         int re = paymentRepository.insertPayment(payment);
@@ -58,6 +64,15 @@ public class KakaoPaySuccessAction implements Action {
         session.removeAttribute("seatPrice");
         session.removeAttribute("inputSeats");
 
+        Reservation reservation = new Reservation();
+        reservation.setReservationId(today.format(DateTimeFormatter.ofPattern("yyyyMMdd"))+pg_token);
+        reservation.setReservationDate(formattedDate);
+        reservation.setReservationTheater(theaterName);
+        reservation.setUserEmail((String) session.getAttribute("userEmail"));
+        reservation.setMovieTitle(movieTitle);
+        reservation.setPaymentCode(pg_token);
+        ReservationRepository reservationRepository = new ReservationRepository();
+        reservationRepository.saveReservation(reservation);
         return "/views/success.jsp";
     }
 }

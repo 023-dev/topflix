@@ -64,7 +64,7 @@
     <a href='/views/main.do'>
         메인페이지
     </a>
-    <a href='/views/myPage.do'>
+    <a href='/views/reservation.do'>
         예매내역확인
     </a>
 </div>
