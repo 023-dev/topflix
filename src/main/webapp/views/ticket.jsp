@@ -66,12 +66,12 @@
             <p>2024.07.13(토) 13:10 ~ 14:56</p>
             <div class="seat-status">
                 <span class="selected">
-                    <div class="seat-box selected-box"></div>
+                   <div class="seat-box selected-box"></div>
                     선택
                 </span>
                 <span class="booked">
                     <div class="seat-box booked-box"></div>
-                    예매완료
+                    예매가능
                 </span>
                 <span class="available">
                     <div class="seat-box available-box">

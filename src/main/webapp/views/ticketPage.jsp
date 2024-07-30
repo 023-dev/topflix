@@ -32,9 +32,24 @@
                 document.getElementById("seats").innerHTML = "좌석: " + seatsText;
                 console.log(seatsText);
                 document.getElementById("inputSeats").value = seatsText;
+                toggleSubmitButton();
             }
 
+            function toggleSubmitButton() {
+                const inputSeats = document.getElementById("inputSeats").value;
+                const submitButton = document.querySelector(".confirm-btn");
+                if (inputSeats) {
+                    submitButton.disabled = false;
+                    submitButton.style.backgroundColor = "#ff0000"; // 원래 색깔로 변경
+                } else {
+                    submitButton.disabled = true;
+                    submitButton.style.backgroundColor = "gray";
+                }
+            }
 
+            window.onload = function() {
+                toggleSubmitButton();
+            };
     </script>
 </head>
 <body>
@@ -68,11 +83,24 @@
             <p>2024.07.13(토) 13:10 ~ 14:56</p>
             <div class="seat-status">
                 <span class="selected">
-                    <div style='background-color: rgb(0, 0, 255)'></div>
+                   <div class="seat-box selected-box"></div>
                     선택
                 </span>
-                <span class="booked">예매완료</span>
-                <span class="available">예매가능</span>
+                <span class="booked">
+                    <div class="seat-box booked-box"></div>
+                    예매가능
+                </span>
+                <span class="available">
+                    <div class="seat-box available-box">
+                        <span class="cross">✕</span>
+                    </div>
+                    예매완료
+                </span>
+            </div>
+            <div class="genre-tabs">
+                <span class="genre-tab"># 장르1</span>
+                <span class="genre-tab"># 장르2</span>
+                <span class="genre-tab"># 장르3</span>
             </div>
         </div>
     </section>

@@ -18,9 +18,7 @@ public class WishAction implements Action {
     public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         String userEmail = (String)session.getAttribute("userEmail");
-        System.out.println("userEmail  : " + userEmail);
         String movieTitle = request.getParameter("title");
-        System.out.println("title  : " + movieTitle);
         MovieRepository movieRepository = new MovieRepository();
         WishRepository wishRepository = new WishRepository();
 
@@ -34,12 +32,10 @@ public class WishAction implements Action {
         for (Wish wish : wishes) {
             Movie movie = movieRepository.findMovieByTitle(wish.getMovieTitle());
             movies.add(movie);
-            System.out.println(movie.toString());
         }
 
         request.setAttribute("wishes", wishes);
         request.setAttribute("movies", movies);
-
 
         return "wish.jsp";
     }

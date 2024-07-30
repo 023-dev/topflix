@@ -10,20 +10,12 @@
 </head>
 <body>
 <header>
-    <div class="logo">TOPFLIX</div>
-    <nav>
-        <ul>
-            <li><a href="#">HOME</a></li>
-            <li><a href="#">MY PAGE</a></li>
-        </ul>
-        <button class="login-btn">로그인</button>
-    </nav>
+    <%@ include file="/includes/header.jsp" %>
 </header>
 <main>
     <div class="movie-chart-container">
         <section class="movie-chart">
             <h2 id="movieChartBtn" class="tablink active-title" onclick="openTab('movie-chart')">무비차트</h2>
-            <h2 id="upcomingMoviesBtn" class="tablink" onclick="openTab('upcoming-movies')">상영예정작</h2>
         </section>
         <section id="movie-chart" class="tabcontent" style="display: block;">
             <div class="movie-list">
@@ -43,6 +35,7 @@
                         <button class="btn custom-button" onclick="location.href='ticketPage.do?title=${movie.movieTitle}'">예매하기</button>
                     </div>
                 </c:forEach>
+                <div class="movie-item"></div>
             </div>
         </section>
         <section id="upcoming-movies" class="tabcontent" style="display: none;">
@@ -60,7 +53,14 @@
                             </p>
                             <p>${movie.movieReleaseDate} 개봉</p>
                         </div>
-                        <button class="btn custom-button" onclick="location.href='ticketPage.do?title=${movie.movieTitle}'">예매하기</button>
+                        <c:choose>
+                            <c:when test="${empty sessionScope.userEmail}">
+                                <button class="btn custom-button" onclick="alert('로그인이 필요한 기능입니다.')" type="button">예매하기</button>
+                            </c:when>
+                            <c:otherwise>
+                                <button class="btn custom-button" onclick="location.href='ticketPage.do?title=${movie.movieTitle}'">예매하기</button>
+                            </c:otherwise>
+                        </c:choose>
                     </div>
                 </c:forEach>
             </div>
@@ -68,16 +68,8 @@
     </div>
 </main>
 <footer>
-    <div class="footer-content">
-        <ul>
-            <li><a href="#">회사소개</a></li>
-            <li><a href="#">이용약관</a></li>
-            <li><a href="#">개인정보처리방침</a></li>
-            <li><a href="#">고객센터</a></li>
-        </ul>
-        <p>© 2024 TOPFLIX. All rights reserved.</p>
-    </div>
+    <%@ include file="/includes/footer.jsp" %>
 </footer>
-<script src="../js/chart.js"></script>
+<%--<script src="../js/chart.js"></script>--%>
 </body>
 </html>

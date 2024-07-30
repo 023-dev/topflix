@@ -60,6 +60,7 @@ public class KakaoPayAction implements Action {
 
         httpPost.setEntity(new StringEntity(requestBody, "UTF-8"));
 
+
         try (CloseableHttpResponse httpResponse = httpClient.execute(httpPost)) {
             String responseString = EntityUtils.toString(httpResponse.getEntity());
             JsonObject jsonResponse = JsonParser.parseString(responseString).getAsJsonObject();

@@ -1,0 +1,8 @@
+
+|
+java:S1118":Add a private constructor to hide the implicit public one.(¼‡Éh8Í¹œç2J$6d3784aa-4371-43f5-a073-2eef76409068
+´
+java:S1130"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(œ±ÏÜúÿÿÿÿ8Ş¹œç2J$db3ab3e4-0d2d-4e04-bd1c-47d700047c8b
+~	java:S125!"<This block of commented-out lines of code should be removed.(Ô¸Ş 8à¹œç2J$e0e248e2-7072-4ea3-a409-e40aa9be7be0
+ˆ
+java:S1128"ERemove this unused import 'io.prometheus.client.exporter.HTTPServer'.(±³ˆ¥8ã¹œç2J$f4f8855c-4ee1-4548-9cad-e19503d58701

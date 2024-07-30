@@ -1,20 +1,20 @@
 body {
-    background-color: black;
+    /*background-color: #121212!important;;*/
     color: #cccccc; /* 폰트 색상을 약간 어둡게 조정 */
     font-family: 'Arial', sans-serif;
-    margin: 0;
     padding: 0;
 }
 
 .footer {
-    background-color: black;
-    color: #cccccc; /* 폰트 색상을 약간 어둡게 조정 */
+    background-color: #121212!important;;
+    color: #cccccc!important;/* 폰트 색상을 약간 어둡게 조정 */
     padding: 20px 0;
     font-size: 14px; /* 폰트 크기 조정 */
 }
 
 .footer-content {
     max-width: 800px;
+    color: #cccccc; /* 폰트 색상을 약간 어둡게 조정 */
     margin: 0 auto;
     text-align: left; /* 왼쪽 정렬 */
 }
@@ -67,4 +67,9 @@ body {
 
 .cloud-hosting span {
     color: white; /* 클라우드 호스팅 텍스트 색상을 흰색으로 설정 */
+}
+
+.footer-section.topflix{
+    margin-top: 25px; /* 위 마진 */
+    margin-bottom: 25px; /* 아래 마진 */
 }
