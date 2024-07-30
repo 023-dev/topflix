@@ -82,3 +82,8 @@ body {
 .cloud-hosting span {
     color: white; /* 클라우드 호스팅 텍스트 색상을 흰색으로 설정 */
 }
+
+.footer-section.topflix{
+    margin-top: 25px; /* 위 마진 */
+    margin-bottom: 25px; /* 아래 마진 */
+}
