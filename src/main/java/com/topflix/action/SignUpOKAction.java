@@ -16,13 +16,13 @@ public class SignUpOKAction implements Action {
         request.setCharacterEncoding("UTF-8");
 
         String email = request.getParameter("email");
-        if ("emailCheck".equals(request.getParameter("action"))) {
-            boolean isEmailAvailable = userRepository.emailCheck(email) == 0;
-            response.setContentType("application/json");
-            response.setCharacterEncoding("UTF-8");
-            response.getWriter().write("{\"available\":" + isEmailAvailable + "}");
-            return null; // AJAX 응답으로 완료, 더 이상의 처리가 필요 없음
-        }
+//        if ("emailCheck".equals(request.getParameter("action"))) {
+//            boolean isEmailAvailable = userRepository.emailCheck(email) == 0;
+//            response.setContentType("application/json");
+//            response.setCharacterEncoding("UTF-8");
+//            response.getWriter().write("{\"available\":" + isEmailAvailable + "}");
+//            return null; // AJAX 응답으로 완료, 더 이상의 처리가 필요 없음
+//        }
 
 
         String name = request.getParameter("name");

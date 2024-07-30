@@ -14,7 +14,7 @@ main {
     flex-direction: column;
     justify-content: center;
     padding: 20px;
-    max-width: 800px;  /* 전체 크기를 줄이기 위해 최대 너비 설정 */
+    max-width: 100%;  /* 전체 크기를 줄이기 위해 최대 너비 설정 */
     width: 100%;
 }
 

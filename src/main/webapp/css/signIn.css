@@ -80,38 +80,34 @@ h1 {
 }
 
 
-
-
-
-
-/*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
-
-/*footer css 추가되면 아래 코드 다 빼기*/
-.footer {
+.input-wrapper {
+    position: relative;
     width: 100%;
-    text-align: center;
-    font-size: 12px;
-    color: gray;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    padding-bottom: 20px;
 }
-.footer-content {
-    max-width: 500px;
+
+.input {
     width: 100%;
-    text-align: left;
+    padding: 10px 40px 10px 10px; /* 오른쪽 여백을 충분히 확보하여 아이콘이 겹치지 않도록 */
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
 }
-.footer div {
-    margin: 2px 0;
-}
-.question {
-    padding: 10px 0;
-}
-.language-selector {
-    display: block;
-    margin: 10px -3px;
+
+
+.input-wrapper .togglePassword {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
     cursor: pointer;
-    width: 90px;
-    height: auto;
+    z-index: 2; /* 아이콘을 최상단으로 */
+    font-size: 20px; /* 아이콘 크기 */
+    color: #333; /* 아이콘 색상 */
+}
+
+.links a{
+    margin: 10px;
+    text-decoration: none;
 }
