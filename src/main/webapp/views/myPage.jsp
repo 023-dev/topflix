@@ -26,7 +26,7 @@
         </div>
         <div class="divider"></div>
         <div class="action-item">
-            <p class="count">0 건</p>
+            <p class="count">1 건</p>
             <a href="#" class="btn">예약 내역</a>
         </div>
         <div class="divider"></div>
