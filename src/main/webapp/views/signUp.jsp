@@ -153,7 +153,9 @@
         </div>
     </form>
 </div>
-<%@ include file="/includes/footer.jsp" %>
+<footer>
+    <%@ include file="/includes/footer.jsp" %>
+</footer>
 <!-- jQuery Library -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <!-- Custom Script -->

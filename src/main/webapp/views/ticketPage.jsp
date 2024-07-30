@@ -68,11 +68,24 @@
             <p>2024.07.13(토) 13:10 ~ 14:56</p>
             <div class="seat-status">
                 <span class="selected">
-                    <div style='background-color: rgb(0, 0, 255)'></div>
+                   <div class="seat-box selected-box"></div>
                     선택
                 </span>
-                <span class="booked">예매완료</span>
-                <span class="available">예매가능</span>
+                <span class="booked">
+                    <div class="seat-box booked-box"></div>
+                    예매가능
+                </span>
+                <span class="available">
+                    <div class="seat-box available-box">
+                        <span class="cross">✕</span>
+                    </div>
+                    예매완료
+                </span>
+            </div>
+            <div class="genre-tabs">
+                <span class="genre-tab"># 장르1</span>
+                <span class="genre-tab"># 장르2</span>
+                <span class="genre-tab"># 장르3</span>
             </div>
         </div>
     </section>
