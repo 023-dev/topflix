@@ -55,6 +55,10 @@ main {
 	display: flex;
 }
 
+.title-link {
+	text-decoration: none;
+}
+
 .banner-content h1 {
 	/*font-size: 2rem;*/
 	/*margin: 0 0 10px 0;*/
