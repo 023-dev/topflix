@@ -7,7 +7,6 @@
         body {
             font-family: Arial, sans-serif;
             padding-top: 50px; /* 헤더 높이만큼 패딩 추가 */
-            margin: 0; /* 기본 마진 제거 */
         }
 
         .header-container {

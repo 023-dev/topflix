@@ -14,11 +14,20 @@
 </header>
 <main>
 	<div class="movie-banner">
-		<img src="${movie.movieStillCut}" alt="${movie.movieTitle} 포스터" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%)">
+		<img src="${movie.movieStillCut}" onclick="location.href='detailPage.do?title=${movie.movieTitle}'" alt="${movie.movieTitle} 포스터" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%)">
 		<div class="banner-content">
 			<div class="title">
-				<h1>${movie.movieTitle}</h1>
+				<a href="detailPage.do?title=${movie.movieTitle}"><h1>${movie.movieTitle}</h1></a>
 				<div class="buttons">
+
+					<c:choose>
+						<c:when test="${empty sessionScope.userEmail}">
+							<button class="btn custom-button" onclick="alert('로그인이 필요한 기능입니다.')" type="button">예매하기</button>
+						</c:when>
+						<c:otherwise>
+							<button class="btn custom-button" onclick="location.href='ticketPage.do?title=${movie.movieTitle}'">예매하기</button>
+						</c:otherwise>
+					</c:choose>
 					<button class="btn red" onclick="location.href='ticketPage.do?title=${movie.movieTitle}'">예매</button>
 					<button class="btn black" onclick="location.href='wish.do?title=${movie.movieTitle}'">저장</button>
 				</div>

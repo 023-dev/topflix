@@ -6,6 +6,6 @@ import javax.servlet.http.HttpServletResponse;
 public class KakaoPayCancelAction implements Action {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
-        return "cancel.jsp";
+        return "/views/cancel.jsp";
     }
 }

@@ -32,9 +32,24 @@
                 document.getElementById("seats").innerHTML = "좌석: " + seatsText;
                 console.log(seatsText);
                 document.getElementById("inputSeats").value = seatsText;
+                toggleSubmitButton();
             }
 
+            function toggleSubmitButton() {
+                const inputSeats = document.getElementById("inputSeats").value;
+                const submitButton = document.querySelector(".confirm-btn");
+                if (inputSeats) {
+                    submitButton.disabled = false;
+                    submitButton.style.backgroundColor = "#ff0000"; // 원래 색깔로 변경
+                } else {
+                    submitButton.disabled = true;
+                    submitButton.style.backgroundColor = "gray";
+                }
+            }
 
+            window.onload = function() {
+                toggleSubmitButton();
+            };
     </script>
 </head>
 <body>

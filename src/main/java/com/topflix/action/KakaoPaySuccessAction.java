@@ -15,7 +15,7 @@ public class KakaoPaySuccessAction implements Action {
 
         HttpSession session = request.getSession();
         String pg_token = request.getParameter("pg_token");
-        String movieImage = request.getParameter("movieImage");
+        String movieImage = (String) session.getAttribute("movieImage");
         String movieTitle = (String) session.getAttribute("movieTitle");
         String inputSeats = (String) session.getAttribute("inputSeats");
         int quantity = inputSeats.split(",").length;
@@ -38,6 +38,8 @@ public class KakaoPaySuccessAction implements Action {
             System.out.println("payment insert failed");
         }
 
+        System.out.println("movieImage: " + movieImage);
+
         request.setAttribute("movieImage",movieImage);
         request.setAttribute("pg_token", pg_token);
         request.setAttribute("movieTitle", movieTitle);
@@ -47,6 +49,14 @@ public class KakaoPaySuccessAction implements Action {
         request.setAttribute("inputSeats", inputSeats);
         request.setAttribute("totalAmount", totalAmount);
         request.setAttribute("userEmail", session.getAttribute("userEmail"));
+
+        session.removeAttribute("movieImage");
+        session.removeAttribute("movieTitle");
+        session.removeAttribute("theaterName");
+        session.removeAttribute("showtime");
+        session.removeAttribute("screenName");
+        session.removeAttribute("seatPrice");
+        session.removeAttribute("inputSeats");
 
         return "/views/success.jsp";
     }

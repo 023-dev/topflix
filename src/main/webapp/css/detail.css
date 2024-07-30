@@ -140,3 +140,32 @@ main {
 	margin-bottom: 0;
 	padding-right: 10px;
 }
+
+
+.btn.custom-button {
+	background-color: #222222; /* 기본 버튼 색상 */
+	color: white;
+	border: none;
+	padding: 10px 20px;
+	cursor: pointer;
+	border-radius: 5px;
+	font-size: 14px;
+	margin-top: 10px;
+	display: block;
+	text-align: center;
+}
+
+.btn.custom-button:hover {
+	background-color: red; /* 호버할 때 버튼 색상 */
+	color: white;
+}
+
+.btn.custom-button:focus,
+.btn.custom-button:active {
+	outline: none;
+	box-shadow: none; /* 클릭 시 파란색 테두리 제거 */
+}
+
+.btn.custom-button:active {
+	box-shadow: 0 0 10px black; /* 클릭 시 쉐도우를 블랙으로 설정 */
+}
