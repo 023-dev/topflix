@@ -10,6 +10,6 @@ route:  #route: 경고를 처리하는 방법을 정의합니다.
 receivers:  #receivers: 알림을 받을 수신자 목록입니다.
   - name: 'slack'
     slack_configs:  #slack_configs: Slack 알림 설정입니다.
-      - api_url: 'https://hooks.slack.com/services/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'  #api_url: Slack에서 생성한 Webhook URL입니다.
+      - api_url:   #api_url: Slack에서 생성한 Webhook URL입니다.
         channel: '#alerts'  #channel: 메시지를 보낼 Slack 채널입니다.
         send_resolved: true  #send_resolved: 경고가 해결되었을 때 알림을 보낼지 여부입니다.
