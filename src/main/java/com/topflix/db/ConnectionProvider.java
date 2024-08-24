@@ -4,7 +4,7 @@ import java.sql.*;
 
 
 public class ConnectionProvider {
-    private static final String URL = "jdbc:mysql://172.30.1.13:3306/TOPFLIX";
+    private static final String URL = "jdbc:mysql://localhost:3306/TOPFLIX";
     private static final String USER = "topgoal";
     private static final String PASSWORD = "topgoal";
 
